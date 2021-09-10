@@ -1,7 +1,7 @@
 home:
   title: "Rico's cheatsheets"
   tagline: |
-    Hey! I'm <a href='https://ricostacruz.com'>@rstacruz</a> and this is a modest collection of cheatsheets I've written.
+    Hey! I'm a collection of cheatsheets based on devhints.io
 
 top_nav:
   title: Devhints.io
@@ -12,7 +12,7 @@ sheet:
   suffix: cheatsheet
 
 social_list:
-  default_description: "Ridiculous collection of web development cheatsheets"
+  default_description: "Ridiculous collection of cheatsheets"
   description: "The ultimate cheatsheet for TITLE."
   facebook_share: Share on Facebook
   twitter_share: Share on Twitter
