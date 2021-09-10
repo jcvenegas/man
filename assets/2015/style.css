@@ -433,30 +433,6 @@ h3 + pre, h3 + table { margin-top: -1em; }
 .site-header .container { padding: 15px 20px; font-size: 0.9em; color: rgba(147, 154, 161, 0.6); border-bottom: solid 1px #eef3fa; }
 .site-header em { font-family: "eb garamond", serif; font-weight: 400; font-style: italic; font-size-adjust: none; -webkit-font-language-override: normal; font-language-override: normal; -webkit-font-kerning: auto; font-kerning: auto; -webkit-font-feature-settings: "kern", "liga", "dlig", "hlig", "cswh"; font-feature-settings: "kern", "liga", "dlig", "hlig", "cswh"; font-synthesis: weight style; font-size: 1.1em; font-size: 1.1em; color: #555; }
 
-/* .social-list -- social share icons */
-.social-list, .social-list li { margin: 0; padding: 0; }
-.social-list { display: block; text-align: center; width: 100%; margin-top: 2em; }
-@media (min-width: 768px) { .social-list { margin-top: 4em; } }
-.social-list.-top { margin-top: -2em; }
-@media (min-width: 768px) { .social-list.-top { margin-top: -1em; } }
-.social-list li { display: inline-block; }
-.social-list a { display: inline-block; padding: 6px; text-align: center; box-shadow: none; }
-.social-list a:before, .social-list a:after { transition: all 100ms linear; }
-.social-list .text { display: none; }
-.social-list a:before { font-family: "Ionicons"; font-weight: normal; font-style: normal; font-size: 18px; width: 40px; height: 40px; line-height: 40px; display: inline-block; text-align: center; border: solid 2px transparent; border-radius: 50%; }
-.social-list .facebook a { color: #a0bdc7; }
-.social-list .facebook a:hover, .social-list .facebook a:focus { color: #4c66a4; }
-.social-list .facebook a:before { content: ""; }
-.social-list .facebook a:hover:before, .social-list .facebook a:focus:before { border-color: #4c66a4; content: ""; }
-.social-list .twitter a { color: #a0bdc7; }
-.social-list .twitter a:hover, .social-list .twitter a:focus { color: dodgerblue; }
-.social-list .twitter a:before { content: ""; }
-.social-list .twitter a:hover:before, .social-list .twitter a:focus:before { border-color: dodgerblue; content: ""; }
-.social-list .googleplus a { color: #a0bdc7; }
-.social-list .googleplus a:hover, .social-list .googleplus a:focus { color: #f53; }
-.social-list .googleplus a:before { content: ""; }
-.social-list .googleplus a:hover:before, .social-list .googleplus a:focus:before { border-color: #f53; content: ""; }
-
 /* .center (et al) -- utility classes */
 .center { text-align: center; }
 
