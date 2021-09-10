@@ -185,17 +185,3 @@
   box-shadow: none;
   margin: 0;
 }
-
-.social-list.-collapse {
-  margin-top: 0;
-  position: absolute;
-  top: 40vh;
-  left: 30px;
-  width: 32px;
-}
-
-@media (max-width: 480px) {
-  .social-list.-collapse {
-    display: none;
-  }
-}
