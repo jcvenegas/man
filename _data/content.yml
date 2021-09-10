@@ -31,10 +31,6 @@ search_form:
   home_placeholder: Search...
   prefix: devhints.io
 
-comments_area:
-  suffix: for this cheatsheet.
-  link: "Write yours!"
-
 not_found:
   title: Not found
   description: Sorry, we don't have a cheatsheet for this yet. Try searching!
