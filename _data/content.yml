@@ -1,5 +1,5 @@
 home:
-  title: "Rico's cheatsheets"
+  title: "Dev's cheatsheets"
   tagline: |
     Hey! I'm a collection of cheatsheets based on devhints.io
 
@@ -32,10 +32,9 @@ not_found:
   home: Back to home
 
 announcement:
-  id: 2017-10-26-twitter
+  id: 2017-10-26-welcome
   title: |
-    New: We're on Twitter ♥️
+    New: Welcome
   body: |
-    Follow [@devhints](https://twitter.com/devhints) on Twitter for daily "today I learned" snippets!
+    welcome
 
-    [![](https://img.shields.io/twitter/follow/devhints.svg?style=social&label=@devhints)](https://twitter.com/devhints)
