@@ -23,30 +23,30 @@
 <meta charset='utf-8'>
 <meta content='width=device-width, initial-scale=1.0' name='viewport'>
 <link href='./assets/favicon.png' rel='shortcut icon'>
-<meta content='/postgresql-json.html' name='app:pageurl'>
+<meta content='/rust.html' name='app:pageurl'>
 
 
-  <title>PostgreSQL JSON cheatsheet</title>
-  <meta content='PostgreSQL JSON cheatsheet' property='og:title'>
-  <meta content='PostgreSQL JSON cheatsheet' property='twitter:title'>
+  <title>Go cheatsheet</title>
+  <meta content='Go cheatsheet' property='og:title'>
+  <meta content='Go cheatsheet' property='twitter:title'>
   <meta content='article' property='og:type'>
 
 
 
-  <meta content='https://assets.devhints.io/previews/postgresql-json.jpg?t=20210910213041' property='og:image'>
-  <meta content='https://assets.devhints.io/previews/postgresql-json.jpg?t=20210910213041' property='twitter:image'>
+  <meta content='https://assets.devhints.io/previews/rust.jpg?t=20210910213041' property='og:image'>
+  <meta content='https://assets.devhints.io/previews/rust.jpg?t=20210910213041' property='twitter:image'>
   <meta content='900' property='og:image:width'>
   <meta content='471' property='og:image:height'>
 
 
 
-  <meta content="The one-page guide to PostgreSQL JSON: usage, examples, links, snippets, and more." name="description">
-  <meta content="The one-page guide to PostgreSQL JSON: usage, examples, links, snippets, and more." property="og:description">
-  <meta content="The one-page guide to PostgreSQL JSON: usage, examples, links, snippets, and more." property="twitter:description">
+  <meta content="The one-page guide to Go: usage, examples, links, snippets, and more." name="description">
+  <meta content="The one-page guide to Go: usage, examples, links, snippets, and more." property="og:description">
+  <meta content="The one-page guide to Go: usage, examples, links, snippets, and more." property="twitter:description">
 
 
-<link rel="canonical" href="https://devhints.io/postgresql-json">
-<meta name="og:url" content="https://devhints.io/postgresql-json">
+<link rel="canonical" href="https://devhints.io/rust">
+<meta name="og:url" content="https://devhints.io/rust">
 
 
 
@@ -62,8 +62,12 @@
 
 
 
-  <meta content='Databases' property='article:section'>
+  <meta content='C-like' property='article:section'>
 
+
+
+
+  <meta content='Featured' property='article:tag'>
 
 
 
@@ -114,9 +118,9 @@ gtag('config','UA-106902774-1');
     "@type": "WebPage",
     "@id": "https://google.com/article"
   },
-  "headline": "PostgreSQL JSON cheatsheet",
-  "image": [ "https://assets.devhints.io/previews/postgresql-json.jpg?t=20210910213041" ],
-  "description": "The one-page guide to PostgreSQL JSON: usage, examples, links, snippets, and more."
+  "headline": "Go cheatsheet",
+  "image": [ "https://assets.devhints.io/previews/rust.jpg?t=20210910213041" ],
+  "description": "The one-page guide to Go: usage, examples, links, snippets, and more."
 }
 </script>
 <script type='application/ld+json'>
@@ -127,15 +131,15 @@ gtag('config','UA-106902774-1');
     "@type": "ListItem",
     "position": 1,
     "item": {
-      "@id": "https://devhints.io/#databases",
-      "name": "Databases"
+      "@id": "https://devhints.io/#c-like",
+      "name": "C-like"
     }
   },{
     "@type": "ListItem",
     "position": 2,
     "item": {
-      "@id": "https://devhints.io/postgresql-json",
-      "name": "PostgreSQL JSON"
+      "@id": "https://devhints.io/rust",
+      "name": "Go"
     }
   }]
 }
@@ -161,8 +165,8 @@ gtag('config','UA-106902774-1');
       <div class='actions'>
         
 <ul class="social-list social page-actions">
-  <li class="facebook link hint--bottom" data-hint="Share on Facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https://devhints.io/postgresql-json.html" target="share"><span class="text"></span></a></li>
-  <li class="twitter link hint--bottom" data-hint="Share on Twitter"><a href="https://twitter.com/intent/tweet?text=The%20ultimate%20cheatsheet%20for%20PostgreSQL%20JSON.%20https://devhints.io/postgresql-json.html" target="share"><span class="text"></span></a></li>
+  <li class="facebook link hint--bottom" data-hint="Share on Facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https://devhints.io/rust.html" target="share"><span class="text"></span></a></li>
+  <li class="twitter link hint--bottom" data-hint="Share on Twitter"><a href="https://twitter.com/intent/tweet?text=The%20ultimate%20cheatsheet%20for%20Go.%20https://devhints.io/rust.html" target="share"><span class="text"></span></a></li>
   
 </ul>
 
@@ -170,7 +174,7 @@ gtag('config','UA-106902774-1');
         
           <ul class='page-actions'>
             <li class='link github -button hint--bottom' data-hint='Edit this page on GitHub'>
-              <a href='https://github.com/rstacruz/cheatsheets/blob/master/postgresql-json.md'>
+              <a href='https://github.com/rstacruz/cheatsheets/blob/master/rust.md'>
                 <span class='text -visible'>Edit</span>
               </a>
             </li>
@@ -184,7 +188,7 @@ gtag('config','UA-106902774-1');
 
 <div class='body-area'>
   <header class='main-heading -center' role='banner'>
-    <h1 class='h1'>PostgreSQL JSON <em>cheatsheet</em></h1>
+    <h1 class='h1'>Go <em>cheatsheet</em></h1>
 
     <div class='pubbox' data-js-no-preview>
       
@@ -207,197 +211,562 @@ gtag('config','UA-106902774-1');
   
 
   <main class='post-content MarkdownBody' data-js-main-body data-js-anchors role='main'>
-    <h2 id="operators">Operators</h2>
+    <h2 class="-three-column" id="getting-started">Getting started</h2>
 
-<h3 id="accessors">Accessors</h3>
-
-<pre class="-setup"><code class="language-sql">SELECT * FROM users WHERE data-&gt;&gt;'name' = 'John';
-SELECT data-&gt;&gt;'name' AS name FROM users;
-</code></pre>
-
-<table class="-headers -shortcuts">
-  <thead>
-    <tr>
-      <th>Operator</th>
-      <th>Description</th>
-      <th>Example</th>
-      <th>Returns</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>-&gt;</code> <em>int</em></td>
-      <td>Get array element <code>2</code></td>
-      <td><code>data-&gt;2</code></td>
-      <td>JSON</td>
-    </tr>
-    <tr>
-      <td><code>-&gt;</code> <em>text</em></td>
-      <td>Get object key <code>name</code></td>
-      <td><code>data-&gt;'name'</code></td>
-      <td>JSON</td>
-    </tr>
-    <tr>
-      <td><code>#&gt;</code> <em>text[]</em></td>
-      <td>Get keypath <code>a,b</code> (eg, <code>data.a.b</code>)</td>
-      <td><code>data#&gt;'{a,b}'</code></td>
-      <td>JSON</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><code>-&gt;&gt;</code> <em>int</em></td>
-      <td>Get array element <code>2</code></td>
-      <td><code>data-&gt;&gt;2</code></td>
-      <td>Text</td>
-    </tr>
-    <tr>
-      <td><code>-&gt;&gt;</code> <em>text</em></td>
-      <td>Get object key <code>name</code></td>
-      <td><code>data-&gt;&gt;'name'</code></td>
-      <td>Text</td>
-    </tr>
-    <tr>
-      <td><code>#&gt;&gt;</code> <em>text[]</em></td>
-      <td>Get keypath <code>a,b</code> (eg, <code>data.a.b</code>)</td>
-      <td><code>data#&gt;&gt;'{a,b}'</code></td>
-      <td>Text</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><code>&gt;</code> returns JSON, <code>&gt;&gt;</code> returns text.</p>
-
-<h3 id="boolean-operators">Boolean operators</h3>
-
-<pre class="-setup"><code class="language-sql">SELECT * FROM users WHERE data-&gt;tags ? 'admin';
-SELECT data-&gt;tags ? 'admin' AS is_admin FROM users;
-</code></pre>
-
-<table class="-headers -shortcuts -left-align">
-  <thead>
-    <tr>
-      <th>Operator</th>
-      <th>Description</th>
-      <th>Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>?</code> <em>str</em></td>
-      <td>Does <code>data</code> have key <code>name</code>?</td>
-      <td><code>data ? 'name'</code></td>
-    </tr>
-    <tr>
-      <td><code>?|</code> <em>text[]</em></td>
-      <td>Does <code>data</code> have <code>a</code> or <code>b</code>?</td>
-      <td><code>data ?| array['a','b']</code></td>
-    </tr>
-    <tr>
-      <td><code>?&amp;</code> <em>text[]</em></td>
-      <td>Does <code>data</code> have <code>a</code> and <code>b</code>?</td>
-      <td><code>data ?&amp; array['a','b']</code></td>
-    </tr>
-    <tr>
-      <td><code>@&gt;</code> <em>jsonb</em></td>
-      <td>Does <code>left</code> include <code>right</code>?</td>
-      <td><code>data @&gt; '{"b":2}'::jsonb</code></td>
-    </tr>
-    <tr>
-      <td><code>&lt;@</code> <em>jsonb</em></td>
-      <td>Does <code>right</code> include <code>left</code>?</td>
-      <td><code>data &lt;@ '{"a":1,"b":2}'::jsonb</code></td>
-    </tr>
-  </tbody>
-</table>
-
-<p>When <code>?</code>/<code>?|</code>/<code>?&amp;</code> works on objects, it checks keys; when it works on arrays, it checks for elements.</p>
-
-<h2 id="updating">Updating</h2>
-
-<h3 id="arrays-and-objects">Arrays and objects</h3>
-
-<pre class="-setup"><code class="language-sql">UPDATE users SET tags = tags || array['admin'];
-</code></pre>
-
-<table class="-headers -shortcuts">
-  <thead>
-    <tr>
-      <th>Operator</th>
-      <th>Example</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>||</code> <em>json</em></td>
-      <td><code>data || array['a','b']</code></td>
-      <td>Concatenate</td>
-    </tr>
-    <tr>
-      <td><code>-</code> <em>str</em></td>
-      <td><code>data - 'a'</code></td>
-      <td>Delete a key</td>
-    </tr>
-    <tr>
-      <td><code>-</code> <em>int</em></td>
-      <td><code>data - 1</code></td>
-      <td>Delete an array item</td>
-    </tr>
-    <tr>
-      <td><code>#-</code> <em>text[]</em></td>
-      <td><code>data #- '{us,name}'</code></td>
-      <td>Delete a path</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Only available in PostgreSQL 9.5+.</p>
-
-<h3 id="jsonb_set">jsonb_set</h3>
-
-<pre><code class="language-sql">UPDATE users SET data = jsonb_set(data, '{name}', '"John"');
-</code></pre>
-
-<p>Only available in PostgreSQL 9.5+.</p>
-
-<h2 id="functions">Functions</h2>
-
-<h4 id="fnjson--json">fn(json) → json</h4>
-
-<pre><code class="language-sql">jsonb_set(data, '{path}', value)
-jsonb_strip_nulls(data)
-</code></pre>
-
-<h4 id="fn--json">fn(···) → json</h4>
-
-<pre><code class="language-sql">to_json("Hello"::text)
-array_to_json('{1,2}'::int[])
-</code></pre>
-
-<h4 id="iteration">Iteration</h4>
-
-<pre><code class="language-sql">SELECT * from json_each('{"a":1, "b":2}')
-SELECT * from json_each_text('{"a":1, "b":2}')
--- key | value
-</code></pre>
-
-<p>This is an incomplete list, there’s way too many!</p>
-
-<p>See: <a href="https://www.postgresql.org/docs/9.5/static/functions-json.html">JSON functions</a></p>
-
-<h2 id="more-examples">More examples</h2>
+<h3 class="-intro" id="introduction">Introduction</h3>
 
 <ul>
-  <li><code>'{"a":1}'::jsonb ? 'a'</code></li>
-  <li><code>'["a"]'::jsonb ? 'a'</code></li>
+  <li><a href="https://tour.golang.org/welcome/1">A tour of Go</a> <em>(tour.golang.org)</em></li>
+  <li><a href="https://repl.it/languages/go">Go repl</a> <em>(repl.it)</em></li>
+  <li><a href="https://github.com/golang/go/wiki/">Golang wiki</a> <em>(github.com)</em></li>
 </ul>
+
+<h3 class="-prime" id="hello-world">Hello world</h3>
+
+<h4 class="-file" id="hellogo">hello.go</h4>
+
+<pre><code class="language-go">package main
+
+import "fmt"
+
+func main() {
+  message := greetMe("world")
+  fmt.Println(message)
+}
+
+func greetMe(name string) string {
+  return "Hello, " + name + "!"
+}
+</code></pre>
+
+<pre><code class="language-bash">$ go build
+</code></pre>
+
+<p>Or try it out in the <a href="https://repl.it/languages/go">Go repl</a>, or <a href="https://tour.golang.org/welcome/1">A Tour of Go</a>.</p>
+
+<h3 id="variables">Variables</h3>
+
+<h4 id="variable-declaration">Variable declaration</h4>
+
+<pre><code class="language-go">var msg string
+msg = "Hello"
+</code></pre>
+
+<h4 id="shortcut-of-above-infers-type">Shortcut of above (Infers type)</h4>
+
+<pre><code class="language-go">msg := "Hello"
+</code></pre>
+
+<h3 id="constants">Constants</h3>
+
+<pre><code class="language-go">const Phi = 1.618
+</code></pre>
+
+<p>Constants can be character, string, boolean, or numeric values.</p>
+
+<p>See: <a href="https://tour.golang.org/basics/15">Constants</a></p>
+
+<h2 class="-three-column" id="basic-types">Basic types</h2>
+
+<h3 id="strings">Strings</h3>
+
+<pre><code class="language-go">str := "Hello"
+</code></pre>
+
+<pre><code class="language-go">str := `Multiline
+string`
+</code></pre>
+
+<p>Strings are of type <code>string</code>.</p>
+
+<h3 id="numbers">Numbers</h3>
+
+<h4 id="typical-types">Typical types</h4>
+
+<pre><code class="language-go">num := 3          // int
+num := 3.         // float64
+num := 3 + 4i     // complex128
+num := byte('a')  // byte (alias for uint8)
+</code></pre>
+
+<h4 id="other-types">Other types</h4>
+
+<pre><code class="language-go">var u uint = 7        // uint (unsigned)
+var p float32 = 22.7  // 32-bit float
+</code></pre>
+
+<h3 id="arrays">Arrays</h3>
+
+<pre><code class="language-go">// var numbers [5]int
+numbers := [...]int{0, 0, 0, 0, 0}
+</code></pre>
+
+<p>Arrays have a fixed size.</p>
+
+<h3 id="slices">Slices</h3>
+
+<pre><code class="language-go">slice := []int{2, 3, 4}
+</code></pre>
+
+<pre><code class="language-go">slice := []byte("Hello")
+</code></pre>
+
+<p>Slices have a dynamic size, unlike arrays.</p>
+
+<h3 id="pointers">Pointers</h3>
+
+<pre data-line="2"><code class="language-go">func main () {
+  b := *getPointer()
+  fmt.Println("Value is", b)
+}
+</code></pre>
+
+<pre data-line="3"><code class="language-go">func getPointer () (myPointer *int) {
+  a := 234
+  return &amp;a
+}
+</code></pre>
+
+<pre data-line="2"><code class="language-go">a := new(int)
+*a = 234
+</code></pre>
+
+<p>Pointers point to a memory location of a variable. Go is fully garbage-collected.</p>
+
+<p>See: <a href="https://tour.golang.org/moretypes/1">Pointers</a></p>
+
+<h3 id="type-conversions">Type conversions</h3>
+
+<pre><code class="language-go">i := 2
+f := float64(i)
+u := uint(i)
+</code></pre>
+
+<p>See: <a href="https://tour.golang.org/basics/13">Type conversions</a></p>
+
+<h2 class="-three-column" id="flow-control">Flow control</h2>
+
+<h3 id="conditional">Conditional</h3>
+
+<pre data-line="1,3,5"><code class="language-go">if day == "sunday" || day == "saturday" {
+  rest()
+} else if day == "monday" &amp;&amp; isTired() {
+  groan()
+} else {
+  work()
+}
+</code></pre>
+
+<p>See: <a href="https://tour.golang.org/flowcontrol/5">If</a></p>
+
+<h3 id="statements-in-if">Statements in if</h3>
+
+<pre data-line="1"><code class="language-go">if _, err := doThing(); err != nil {
+  fmt.Println("Uh oh")
+}
+</code></pre>
+
+<p>A condition in an <code>if</code> statement can be preceded with a statement before a <code>;</code>. Variables declared by the statement are only in scope until the end of the <code>if</code>.</p>
+
+<p>See: <a href="https://tour.golang.org/flowcontrol/6">If with a short statement</a></p>
+
+<h3 id="switch">Switch</h3>
+
+<pre><code class="language-go">switch day {
+  case "sunday":
+    // cases don't "fall through" by default!
+    fallthrough
+
+  case "saturday":
+    rest()
+
+  default:
+    work()
+}
+</code></pre>
+
+<p>See: <a href="https://github.com/golang/go/wiki/Switch">Switch</a></p>
+
+<h3 id="for-loop">For loop</h3>
+
+<pre><code class="language-go">for count := 0; count &lt;= 10; count++ {
+  fmt.Println("My counter is at", count)
+}
+</code></pre>
+
+<p>See: <a href="https://tour.golang.org/flowcontrol/1">For loops</a></p>
+
+<h3 id="for-range-loop">For-Range loop</h3>
+
+<pre><code class="language-go">entry := []string{"Jack","John","Jones"}
+for i, val := range entry {
+  fmt.Printf("At position %d, the character %s is present\n", i, val)
+}
+</code></pre>
+
+<p>See: <a href="https://gobyexample.com/range">For-Range loops</a></p>
+
+<h3 id="while-loop">While loop</h3>
+
+<pre><code class="language-go">n := 0
+x := 42
+for n != x {
+  n := guess()
+}
+</code></pre>
+
+<p>See: <a href="https://tour.golang.org/flowcontrol/3">Go’s “while”</a></p>
+
+<h2 class="-three-column" id="functions">Functions</h2>
+
+<h3 id="lambdas">Lambdas</h3>
+
+<pre data-line="1"><code class="language-go">myfunc := func() bool {
+  return x &gt; 10000
+}
+</code></pre>
+
+<p>Functions are first class objects.</p>
+
+<h3 id="multiple-return-types">Multiple return types</h3>
+
+<pre><code class="language-go">a, b := getMessage()
+</code></pre>
+
+<pre data-line="2"><code class="language-go">func getMessage() (a string, b string) {
+  return "Hello", "World"
+}
+</code></pre>
+
+<h3 id="named-return-values">Named return values</h3>
+
+<pre data-line="4"><code class="language-go">func split(sum int) (x, y int) {
+  x = sum * 4 / 9
+  y = sum - x
+  return
+}
+</code></pre>
+
+<p>By defining the return value names in the signature, a <code>return</code> (no args) will return variables with those names.</p>
+
+<p>See: <a href="https://tour.golang.org/basics/7">Named return values</a></p>
+
+<h2 class="-three-column" id="packages">Packages</h2>
+
+<h3 id="importing">Importing</h3>
+
+<pre><code class="language-go">import "fmt"
+import "math/rand"
+</code></pre>
+
+<pre><code class="language-go">import (
+  "fmt"        // gives fmt.Println
+  "math/rand"  // gives rand.Intn
+)
+</code></pre>
+
+<p>Both are the same.</p>
+
+<p>See: <a href="https://tour.golang.org/basics/1">Importing</a></p>
+
+<h3 id="aliases">Aliases</h3>
+
+<pre data-line="1"><code class="language-go">import r "math/rand"
+</code></pre>
+
+<pre><code class="language-go">r.Intn()
+</code></pre>
+
+<h3 id="exporting-names">Exporting names</h3>
+
+<pre><code class="language-go">func Hello () {
+  ···
+}
+</code></pre>
+
+<p>Exported names begin with capital letters.</p>
+
+<p>See: <a href="https://tour.golang.org/basics/3">Exported names</a></p>
+
+<h3 id="packages-1">Packages</h3>
+
+<pre><code class="language-go">package hello
+</code></pre>
+
+<p>Every package file has to start with <code>package</code>.</p>
+
+<h2 class="-three-column" id="concurrency">Concurrency</h2>
+
+<h3 id="goroutines">Goroutines</h3>
+
+<pre data-line="3,6,7,8,13"><code class="language-go">func main() {
+  // A "channel"
+  ch := make(chan string)
+
+  // Start concurrent routines
+  go push("Moe", ch)
+  go push("Larry", ch)
+  go push("Curly", ch)
+
+  // Read 3 results
+  // (Since our goroutines are concurrent,
+  // the order isn't guaranteed!)
+  fmt.Println(&lt;-ch, &lt;-ch, &lt;-ch)
+}
+</code></pre>
+
+<pre data-line="3"><code class="language-go">func push(name string, ch chan string) {
+  msg := "Hey, " + name
+  ch &lt;- msg
+}
+</code></pre>
+
+<p>Channels are concurrency-safe communication objects, used in goroutines.</p>
+
+<p>See: <a href="https://tour.golang.org/concurrency/1">Goroutines</a>, <a href="https://tour.golang.org/concurrency/2">Channels</a></p>
+
+<h3 id="buffered-channels">Buffered channels</h3>
+
+<pre data-line="1"><code class="language-go">ch := make(chan int, 2)
+ch &lt;- 1
+ch &lt;- 2
+ch &lt;- 3
+// fatal error:
+// all goroutines are asleep - deadlock!
+</code></pre>
+
+<p>Buffered channels limit the amount of messages it can keep.</p>
+
+<p>See: <a href="https://tour.golang.org/concurrency/3">Buffered channels</a></p>
+
+<h3 id="closing-channels">Closing channels</h3>
+
+<h4 id="closes-a-channel">Closes a channel</h4>
+
+<pre data-line="4"><code class="language-go">ch &lt;- 1
+ch &lt;- 2
+ch &lt;- 3
+close(ch)
+</code></pre>
+
+<h4 id="iterates-across-a-channel-until-its-closed">Iterates across a channel until its closed</h4>
+
+<pre data-line="1"><code class="language-go">for i := range ch {
+  ···
+}
+</code></pre>
+
+<h4 id="closed-if-ok--false">Closed if <code>ok == false</code></h4>
+
+<pre><code class="language-go">v, ok := &lt;- ch
+</code></pre>
+
+<p>See: <a href="https://tour.golang.org/concurrency/4">Range and close</a></p>
+
+<h3 id="waitgroup">WaitGroup</h3>
+
+<pre data-line="1,4,8,12"><code class="language-go">import "sync"
+
+func main() {
+  var wg sync.WaitGroup
+  
+  for _, item := range itemList {
+    // Increment WaitGroup Counter
+    wg.Add(1)
+    go doOperation(item)
+  }
+  // Wait for goroutines to finish
+  wg.Wait()
+  
+}
+</code></pre>
+
+<pre data-line="2"><code class="language-go">func doOperation(item string) {
+  defer wg.Done()
+  // do operation on item
+  // ...
+}
+</code></pre>
+
+<p>A WaitGroup waits for a collection of goroutines to finish. The main goroutine calls Add to set the number of goroutines to wait for. The goroutine calls <code>wg.Done()</code> when it finishes.
+See: <a href="https://golang.org/pkg/sync/#WaitGroup">WaitGroup</a></p>
+
+<h2 id="error-control">Error control</h2>
+
+<h3 id="defer">Defer</h3>
+
+<pre data-line="2"><code class="language-go">func main() {
+  defer fmt.Println("Done")
+  fmt.Println("Working...")
+}
+</code></pre>
+
+<p>Defers running a function until the surrounding function returns.
+The arguments are evaluated immediately, but the function call is not ran until later.</p>
+
+<p>See: <a href="https://blog.golang.org/defer-panic-and-recover">Defer, panic and recover</a></p>
+
+<h3 id="deferring-functions">Deferring functions</h3>
+
+<pre data-line="2,3,4"><code class="language-go">func main() {
+  defer func() {
+    fmt.Println("Done")
+  }()
+  fmt.Println("Working...")
+}
+</code></pre>
+
+<p>Lambdas are better suited for defer blocks.</p>
+
+<pre data-line="3,4,5"><code class="language-go">func main() {
+  var d = int64(0)
+  defer func(d *int64) {
+    fmt.Printf("&amp; %v Unix Sec\n", *d)
+  }(&amp;d)
+  fmt.Print("Done ")
+  d = time.Now().Unix()
+}
+</code></pre>
+<p>The defer func uses current value of d, unless we use a pointer to get final value at end of main.</p>
+
+<h2 class="-three-column" id="structs">Structs</h2>
+
+<h3 id="defining">Defining</h3>
+
+<pre data-line="1,2,3,4"><code class="language-go">type Vertex struct {
+  X int
+  Y int
+}
+</code></pre>
+
+<pre><code class="language-go">func main() {
+  v := Vertex{1, 2}
+  v.X = 4
+  fmt.Println(v.X, v.Y)
+}
+</code></pre>
+
+<p>See: <a href="https://tour.golang.org/moretypes/2">Structs</a></p>
+
+<h3 id="literals">Literals</h3>
+
+<pre><code class="language-go">v := Vertex{X: 1, Y: 2}
+</code></pre>
+
+<pre><code class="language-go">// Field names can be omitted
+v := Vertex{1, 2}
+</code></pre>
+
+<pre><code class="language-go">// Y is implicit
+v := Vertex{X: 1}
+</code></pre>
+
+<p>You can also put field names.</p>
+
+<h3 id="pointers-to-structs">Pointers to structs</h3>
+
+<pre><code class="language-go">v := &amp;Vertex{1, 2}
+v.X = 2
+</code></pre>
+
+<p>Doing <code>v.X</code> is the same as doing <code>(*v).X</code>, when <code>v</code> is a pointer.</p>
+
+<h2 id="methods">Methods</h2>
+
+<h3 id="receivers">Receivers</h3>
+
+<pre><code class="language-go">type Vertex struct {
+  X, Y float64
+}
+</code></pre>
+
+<pre data-line="1"><code class="language-go">func (v Vertex) Abs() float64 {
+  return math.Sqrt(v.X * v.X + v.Y * v.Y)
+}
+</code></pre>
+
+<pre><code class="language-go">v := Vertex{1, 2}
+v.Abs()
+</code></pre>
+
+<p>There are no classes, but you can define functions with <em>receivers</em>.</p>
+
+<p>See: <a href="https://tour.golang.org/methods/1">Methods</a></p>
+
+<h3 id="mutation">Mutation</h3>
+
+<pre data-line="1"><code class="language-go">func (v *Vertex) Scale(f float64) {
+  v.X = v.X * f
+  v.Y = v.Y * f
+}
+</code></pre>
+
+<pre><code class="language-go">v := Vertex{6, 12}
+v.Scale(0.5)
+// `v` is updated
+</code></pre>
+
+<p>By defining your receiver as a pointer (<code>*Vertex</code>), you can do mutations.</p>
+
+<p>See: <a href="https://tour.golang.org/methods/4">Pointer receivers</a></p>
+
+<h2 id="interfaces">Interfaces</h2>
+
+<h3 id="a-basic-interface">A basic interface</h3>
+
+<pre><code class="language-go">type Shape interface {
+  Area() float64
+  Perimeter() float64
+}
+</code></pre>
+
+<h3 id="struct">Struct</h3>
+
+<pre><code class="language-go">type Rectangle struct {
+  Length, Width float64
+}
+</code></pre>
+
+<p>Struct <code>Rectangle</code> implicitly implements interface <code>Shape</code> by implementing all of its methods.</p>
+
+<h3 id="methods-1">Methods</h3>
+
+<pre><code class="language-go">func (r Rectangle) Area() float64 {
+  return r.Length * r.Width
+}
+
+func (r Rectangle) Perimeter() float64 {
+  return 2 * (r.Length + r.Width)
+}
+</code></pre>
+
+<p>The methods defined in <code>Shape</code> are implemented in <code>Rectangle</code>.</p>
+
+<h3 id="interface-example">Interface example</h3>
+
+<pre><code class="language-go">func main() {
+  var r Shape = Rectangle{Length: 3, Width: 4}
+  fmt.Printf("Type of r: %T, Area: %v, Perimeter: %v.", r, r.Area(), r.Perimeter())
+}
+</code></pre>
 
 <h2 id="references">References</h2>
 
+<h3 class="-intro" id="official-resources">Official resources</h3>
+
 <ul>
-  <li><a href="https://www.postgresql.org/docs/9.5/static/functions-json.html">https://www.postgresql.org/docs/9.5/static/functions-json.html</a></li>
-  <li><a href="https://www.postgresql.org/docs/9.5/static/datatype-json.html">https://www.postgresql.org/docs/9.5/static/datatype-json.html</a></li>
+  <li><a href="https://tour.golang.org/welcome/1">A tour of Go</a> <em>(tour.golang.org)</em></li>
+  <li><a href="https://github.com/golang/go/wiki/">Golang wiki</a> <em>(github.com)</em></li>
+  <li><a href="https://golang.org/doc/effective_go.html">Effective Go</a> <em>(golang.org)</em></li>
+</ul>
+
+<h3 class="-intro" id="other-links">Other links</h3>
+
+<ul>
+  <li><a href="https://gobyexample.com/">Go by Example</a> <em>(gobyexample.com)</em></li>
+  <li><a href="https://awesome-go.com/">Awesome Go</a> <em>(awesome-go.com)</em></li>
+  <li><a href="https://www.youtube.com/channel/UC_BzFbxG2za3bp5NRRRXJSw">JustForFunc Youtube</a> <em>(youtube.com)</em></li>
+  <li><a href="https://github.com/golang/go/wiki/CodeReviewComments">Style Guide</a> <em>(github.com)</em></li>
 </ul>
 
   </main>
@@ -412,7 +781,7 @@ SELECT * from json_each_text('{"a":1, "b":2}')
       <details class='comments-details'>
         <summary>
           <strong class='count'>
-            <span class='disqus-comment-count' data-disqus-identifier="postgresql-json" data-disqus-url='https://devhints.io/postgresql-json'>0 Comments</span>
+            <span class='disqus-comment-count' data-disqus-identifier="rust" data-disqus-url='https://devhints.io/rust'>0 Comments</span>
           </strong>
           <span class='suffix'>for this cheatsheet.</span>
           <span class='fauxlink'>Write yours!</span>
@@ -424,7 +793,7 @@ SELECT * from json_each_text('{"a":1, "b":2}')
         </div>
       </details>
     </div>
-    <noscript data-js-disqus='{"host":"devhints.disqus.com","url":"https://devhints.io/postgresql-json","identifier":"postgresql-json"}'></noscript>
+    <noscript data-js-disqus='{"host":"devhints.disqus.com","url":"https://devhints.io/rust","identifier":"rust"}'></noscript>
   </section>
 
 
@@ -481,14 +850,14 @@ SELECT * from json_each_text('{"a":1, "b":2}')
       <div class='group'>
         <div class='related-posts-group'>
           
-            <h3>Other Databases cheatsheets</h3>
+            <h3>Other C-like cheatsheets</h3>
           
 
           <ul class='related-post-list'>
             
               <li class='item related-post-item'>
-  <a href='./sql-join'>
-    <strong>SQL joins</strong>
+  <a href='./go'>
+    <strong>Go</strong>
     <span>
       cheatsheet
 
@@ -501,8 +870,8 @@ SELECT * from json_each_text('{"a":1, "b":2}')
 
             
               <li class='item related-post-item'>
-  <a href='./knex'>
-    <strong>Knex</strong>
+  <a href='./c_preprocessor'>
+    <strong>C Preprocessor</strong>
     <span>
       cheatsheet
 
@@ -515,25 +884,13 @@ SELECT * from json_each_text('{"a":1, "b":2}')
 
             
               <li class='item related-post-item'>
-  <a href='./mysql'>
-    <strong>MySQL</strong>
+  <a href='./csharp7'>
+    <strong>C# 7</strong>
     <span>
       cheatsheet
 
       
       <abbr class='attribute-peg -new-layout hint--bottom' data-hint='New layout!'><span></span></abbr>
-      
-    </span>
-  </a>
-</li>
-
-            
-              <li class='item related-post-item'>
-  <a href='./postgresql'>
-    <strong>PostgreSQL</strong>
-    <span>
-      cheatsheet
-
       
     </span>
   </a>
@@ -657,7 +1014,7 @@ function n(n,t,e){n.addEventListener?n.addEventListener(t,e):n.attachEvent("on"+
 "use strict";var e=u(require("./wrapify")),d=u(require("dom101/add-class")),t=u(require("dom101/on"));function u(e){return e&&e.__esModule?e:{default:e}}var a,o=document.querySelector("[data-js-main-body]");function r(){a||((0,d.default)(document.documentElement,"LoadDone"),a=!0)}o&&((0,e.default)(o),(0,d.default)(o,"-wrapified")),(0,t.default)(window,"load",r),setTimeout(r,5e3);
 },{"./wrapify":"hE9p","dom101/add-class":"G20n","dom101/on":"DJ2P"}]},{},["eoMl"], null)</script>
 <script src='./assets/packed/app.js?t=20210910213041'></script>
-<script src='https://cdn.jsdelivr.net/npm/prismjs@1.6.0/components/prism-sql.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/prismjs@1.6.0/components/prism-go.min.js'></script><script src='https://cdn.jsdelivr.net/npm/prismjs@1.6.0/components/prism-bash.min.js'></script>
 
 
 </body>
