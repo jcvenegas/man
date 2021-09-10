@@ -1,7 +1,7 @@
 ---
-title: Go
+title: Rust
 layout: 2017/sheet
-prism_languages: [go, bash]
+prism_languages: [rust]
 weight: -3
 tags: [Featured]
 category: Code
@@ -11,53 +11,34 @@ updated: 2020-06-21
 ## Getting started
 {: .-three-column}
 
-### Introduction
-{: .-intro}
-
-- [A tour of Go](https://tour.golang.org/welcome/1) _(tour.golang.org)_
-- [Go repl](https://repl.it/languages/go) _(repl.it)_
-- [Golang wiki](https://github.com/golang/go/wiki/) _(github.com)_
-
 ### Hello world
 {: .-prime}
 
-#### hello.go
+#### hello.rs
 {: .-file}
 
-```go
-package main
-
-import "fmt"
-
-func main() {
-  message := greetMe("world")
-  fmt.Println(message)
-}
-
-func greetMe(name string) string {
-  return "Hello, " + name + "!"
+```rust
+fn main() {
+  println!("message");
 }
 ```
 
 ```bash
-$ go build
+$ cargo build
 ```
-
-Or try it out in the [Go repl](https://repl.it/languages/go), or [A Tour of Go](https://tour.golang.org/welcome/1).
 
 ### Variables
 
 #### Variable declaration
 
-```go
-var msg string
-msg = "Hello"
+```rust
+let msg: &str = "hello"
 ```
 
 #### Shortcut of above (Infers type)
 
-```go
-msg := "Hello"
+```rust
+let msg = "hello"
 ```
 
 ### Constants
