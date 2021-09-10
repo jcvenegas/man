@@ -53,19 +53,9 @@
     margin-left: 8px;
   }
 
-  & > .facebook > a::before,
-  & > .twitter > a::before,
   & > .github > a::before {
     content: '';
     vertical-align: middle;
-  }
-
-  & > .facebook > a::before {
-    @include ion-logo-facebook(16px, #334455);
-  }
-
-  & > .twitter > a::before {
-    @include ion-logo-twitter(16px, #334455);
   }
 
   & > .github > a::before {
@@ -76,11 +66,6 @@
     background-image: ion-logo-github-image(white);
   }
 
-  & > .facebook > a::before,
-  & > .twitter > a::before {
-    width: 32px;
-    height: 32px;
-  }
 
   // Compensate alignment
   & > .github > a::before {

@@ -4,26 +4,6 @@
 <link href='{{ base }}/assets/favicon.png' rel='shortcut icon'>
 <meta content='{{ page.url | escape }}' name='app:pageurl'>
 
-{% if meta_title %}
-  <title>{{ meta_title | escape }}</title>
-  <meta content='{{ meta_title | escape }}' property='og:title'>
-  <meta content='{{ meta_title | escape }}' property='twitter:title'>
-  <meta content='{{ page.og_type | default: "article" | escape }}' property='og:type'>
-{% endif %}
-
-{% if meta_image %}
-  <meta content='{{ meta_image | escape }}' property='og:image'>
-  <meta content='{{ meta_image | escape }}' property='twitter:image'>
-  <meta content='900' property='og:image:width'>
-  <meta content='471' property='og:image:height'>
-{% endif %}
-
-{% if meta_description %}
-  <meta content="{{ meta_description | escape }}" name="description">
-  <meta content="{{ meta_description | escape }}" property="og:description">
-  <meta content="{{ meta_description | escape }}" property="twitter:description">
-{% endif %}
-
 <link rel="canonical" href="{{ page_url | escape }}">
 <meta name="og:url" content="{{ page_url | escape }}">
 {% if page.url == '/' %}
@@ -44,13 +24,6 @@
   <meta content='{{ site.title | escape }}' property='og:site_name'>
 {% endif %}
 
-{% if site.facebook.app_id %}
-  <meta content='{{ site.facebook.app_id | escape }}' property='fb:app_id'>
-{% endif %}
-
-{% if site.facebook.admin %}
-  <meta content='{{ site.facebook.admin | escape }}' property='fb:admins'>
-{% endif %}
 
 {% if page.date %}
   <meta content='{{ page.date | date: "%Y-%m-%d" }}' property='article:published_date'>
@@ -64,17 +37,6 @@
 {% for tag in page.tags %}
   <meta content='{{ tag | escape }}' property='article:tag'>
 {% endfor %}
-{% endif %}
-
-{% if site.data.google_analytics.enabled %}
-<script async src='https://www.googletagmanager.com/gtag/js?id={{ site.data.google_analytics.id }}'></script>
-<script>
-{% comment %} if(~location.hostname.indexOf('{{site.data.google_analytics.hostname}}')){ {% endcomment %}
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments)};
-gtag('js',new Date());
-gtag('config','{{ site.data.google_analytics.id }}');
-</script>
 {% endif %}
 
 {% if depth %}
