@@ -201,13 +201,6 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone .post-content.-wrapified,
 @media (max-width: 480px) { .body-area { padding: 16px; } }
 .body-area.-slim { max-width: 740px; }
 
-/* Disqus */
-.comments-area { margin: 32px 0 16px 0; }
-.comments-area > .container { padding-left: 16px; padding-right: 16px; max-width: 1232px; margin: 0 auto; }
-@media (max-width: 480px) { .comments-area > .container { padding-left: 16px; } }
-@media (max-width: 480px) { .comments-area > .container { padding-right: 16px; } }
-.comments-area > .container::before { content: ''; display: block; background: linear-gradient(to right, rgba(85, 102, 119, 0.3) 50%, transparent); height: 1px; }
-
 /* Comments disclosure triangle */
 .comments-details { margin-bottom: -16px; }
 .comments-details[open] { margin-bottom: 0; }
