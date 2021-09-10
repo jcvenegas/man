@@ -2,7 +2,10 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://devhints.io/</loc></url>
 <url><loc>https://devhints.io/deprecated/bower-api</loc></url>
+<url><loc>https://devhints.io/c_preprocessor</loc></url>
+<url><loc>https://devhints.io/docker</loc></url>
 <url><loc>https://devhints.io/fitness/general</loc></url>
+<url><loc>https://devhints.io/go</loc></url>
 <url><loc>https://devhints.io/wip/intl-datetime</loc></url>
 <url><loc>https://devhints.io/fitness/micronutrients</loc></url>
 <url><loc>https://devhints.io/fitness/phat</loc></url>
