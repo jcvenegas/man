@@ -4,7 +4,7 @@ layout: 2017/sheet
 prism_languages: [bash]
 weight: -3
 tags: [Featured]
-category: Linux
+category: cli
 updated: 2020-06-21
 ---
 
