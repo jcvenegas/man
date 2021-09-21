@@ -23,10 +23,10 @@
 <meta charset='utf-8'>
 <meta content='width=device-width, initial-scale=1.0' name='viewport'>
 <link href='./assets/favicon.png' rel='shortcut icon'>
-<meta content='/docker.html' name='app:pageurl'>
+<meta content='/linux.html' name='app:pageurl'>
 
-<link rel="canonical" href="https://devhints.io/docker">
-<meta name="og:url" content="https://devhints.io/docker">
+<link rel="canonical" href="https://devhints.io/linux">
+<meta name="og:url" content="https://devhints.io/linux">
 
 
 
@@ -39,8 +39,12 @@
 
 
 
-  <meta content='Devops' property='article:section'>
+  <meta content='Linux' property='article:section'>
 
+
+
+
+  <meta content='Featured' property='article:tag'>
 
 
 
@@ -80,9 +84,9 @@
     "@type": "WebPage",
     "@id": "https://google.com/article"
   },
-  "headline": "Docker CLI cheatsheet",
-  "image": [ "https://assets.devhints.io/previews/docker.jpg?t=20210921184628" ],
-  "description": "The one-page guide to Docker CLI: usage, examples, links, snippets, and more."
+  "headline": "Linux cheatsheet",
+  "image": [ "https://assets.devhints.io/previews/linux.jpg?t=20210921184628" ],
+  "description": "The one-page guide to Linux: usage, examples, links, snippets, and more."
 }
 </script>
 <script type='application/ld+json'>
@@ -93,15 +97,15 @@
     "@type": "ListItem",
     "position": 1,
     "item": {
-      "@id": "https://devhints.io/#devops",
-      "name": "Devops"
+      "@id": "https://devhints.io/#linux",
+      "name": "Linux"
     }
   },{
     "@type": "ListItem",
     "position": 2,
     "item": {
-      "@id": "https://devhints.io/docker",
-      "name": "Docker CLI"
+      "@id": "https://devhints.io/linux",
+      "name": "Linux"
     }
   }]
 }
@@ -129,7 +133,7 @@
         
           <ul class='page-actions'>
             <li class='link github -button hint--bottom' data-hint='Edit this page on GitHub'>
-              <a href='https://github.com/jcarlosv/cheatsheets/blob/master/docker.md'>
+              <a href='https://github.com/jcarlosv/cheatsheets/blob/master/linux.md'>
                 <span class='text -visible'>Edit</span>
               </a>
             </li>
@@ -143,7 +147,7 @@
 
 <div class='body-area'>
   <header class='main-heading -center' role='banner'>
-    <h1 class='h1'>Docker CLI <em>cheatsheet</em></h1>
+    <h1 class='h1'>Linux <em>cheatsheet</em></h1>
   </header>
 
   
@@ -153,164 +157,16 @@
   
 
   <main class='post-content MarkdownBody' data-js-main-body data-js-anchors role='main'>
-    <h2 id="manage-images">Manage images</h2>
+    <h2 class="-three-column" id="getting-started">Getting started</h2>
 
-<h3 id="docker-build"><code>docker build</code></h3>
+<h3 class="-prime" id="clean-up-logs">Clean up logs</h3>
 
-<pre><code class="language-yml">docker build [options] .
-  -t "app/container_name"    # name
-  --build-arg APP_HOME=$APP_HOME    # Set build-time variables
+<h4 class="-file" id="cleansh">clean.sh</h4>
+
+<pre><code class="language-sh">journalctl --disk-usage
+sudo journalctl --vacuum-size=500M
+sudo truncate -s 0 /var/log/syslog
 </code></pre>
-
-<p>Create an <code>image</code> from a Dockerfile.</p>
-
-<h3 id="docker-run"><code>docker run</code></h3>
-
-<pre><code class="language-yml">docker run [options] IMAGE
-  # see `docker create` for options
-</code></pre>
-
-<h4 id="example">Example</h4>
-
-<pre><code>$ docker run -it debian:buster /bin/bash
-</code></pre>
-<p>Run a command in an <code>image</code>.</p>
-
-<h2 id="manage-containers">Manage containers</h2>
-
-<h3 id="docker-create"><code>docker create</code></h3>
-
-<pre><code class="language-yml">docker create [options] IMAGE
-  -a, --attach               # attach stdout/err
-  -i, --interactive          # attach stdin (interactive)
-  -t, --tty                  # pseudo-tty
-      --name NAME            # name your image
-  -p, --publish 5000:5000    # port map (host:container)
-      --expose 5432          # expose a port to linked containers
-  -P, --publish-all          # publish all ports
-      --link container:alias # linking
-  -v, --volume `pwd`:/app    # mount (absolute paths needed)
-  -e, --env NAME=hello       # env vars
-</code></pre>
-
-<h4 id="example-1">Example</h4>
-
-<pre><code>$ docker create --name app_redis_1 \
-  --expose 6379 \
-  redis:3.0.2
-</code></pre>
-
-<p>Create a <code>container</code> from an <code>image</code>.</p>
-
-<h3 id="docker-exec"><code>docker exec</code></h3>
-
-<pre><code class="language-yml">docker exec [options] CONTAINER COMMAND
-  -d, --detach        # run in background
-  -i, --interactive   # stdin
-  -t, --tty           # interactive
-</code></pre>
-
-<h4 id="example-2">Example</h4>
-
-<pre><code>$ docker exec app_web_1 tail logs/development.log
-$ docker exec -t -i app_web_1 rails c
-</code></pre>
-
-<p>Run commands in a <code>container</code>.</p>
-
-<h3 id="docker-start"><code>docker start</code></h3>
-
-<pre><code class="language-yml">docker start [options] CONTAINER
-  -a, --attach        # attach stdout/err
-  -i, --interactive   # attach stdin
-
-docker stop [options] CONTAINER
-</code></pre>
-
-<p>Start/stop a <code>container</code>.</p>
-
-<h3 id="docker-ps"><code>docker ps</code></h3>
-
-<pre><code>$ docker ps
-$ docker ps -a
-$ docker kill $ID
-</code></pre>
-
-<p>Manage <code>container</code>s using ps/kill.</p>
-
-<h3 id="docker-logs"><code>docker logs</code></h3>
-
-<pre><code>$ docker logs $ID
-$ docker logs $ID 2&gt;&amp;1 | less
-$ docker logs -f $ID # Follow log output
-</code></pre>
-
-<p>See what’s being logged in an <code>container</code>.</p>
-
-<h2 id="images">Images</h2>
-
-<h3 id="docker-images"><code>docker images</code></h3>
-
-<pre><code class="language-sh">$ docker images
-  REPOSITORY   TAG        ID
-  ubuntu       12.10      b750fe78269d
-  me/myapp     latest     7b2431a8d968
-</code></pre>
-
-<pre><code class="language-sh">$ docker images -a   # also show intermediate
-</code></pre>
-
-<p>Manages <code>image</code>s.</p>
-
-<h3 id="docker-rmi"><code>docker rmi</code></h3>
-
-<pre><code class="language-yml">docker rmi b750fe78269d
-</code></pre>
-
-<p>Deletes <code>image</code>s.</p>
-
-<h2 id="clean-up">Clean up</h2>
-
-<h3 id="clean-all">Clean all</h3>
-
-<pre><code class="language-sh">docker system prune
-</code></pre>
-
-<p>Cleans up dangling images, containers, volumes, and networks (ie, not associated with a container)</p>
-
-<pre><code class="language-sh">docker system prune -a
-</code></pre>
-
-<p>Additionally remove any stopped containers and all unused images (not just dangling images)</p>
-
-<h3 id="containers">Containers</h3>
-
-<pre><code class="language-sh"># Stop all running containers
-docker stop $(docker ps -a -q)
-
-# Delete stopped containers
-docker container prune
-</code></pre>
-
-<h3 id="images-1">Images</h3>
-
-<pre><code class="language-sh">docker image prune [-a]
-</code></pre>
-
-<p>Delete all the images</p>
-
-<h3 id="volumes">Volumes</h3>
-
-<pre><code class="language-sh">docker volume prune
-</code></pre>
-
-<p>Delete all the volumes</p>
-
-<h2 id="also-see">Also see</h2>
-
-<ul>
-  <li><a href="http://www.docker.io/gettingstarted/">Getting Started</a> <em>(docker.io)</em></li>
-</ul>
 
   </main>
 </div>
@@ -370,7 +226,7 @@ docker container prune
       <div class='group'>
         <div class='related-posts-group'>
           
-            <h3>Other Devops cheatsheets</h3>
+            <h3>Other Linux cheatsheets</h3>
           
 
           <ul class='related-post-list'>
@@ -388,20 +244,6 @@ docker container prune
               <li class='item related-post-item'>
   <a href='./go'>
     <strong>Go</strong>
-    <span>
-      cheatsheet
-
-      
-      <abbr class='attribute-peg -new-layout hint--bottom' data-hint='New layout!'><span></span></abbr>
-      
-    </span>
-  </a>
-</li>
-
-            
-              <li class='item related-post-item'>
-  <a href='./linux'>
-    <strong>Linux</strong>
     <span>
       cheatsheet
 
@@ -467,6 +309,20 @@ docker container prune
 </li>
 
             
+              <li class='item related-post-item'>
+  <a href='./docker'>
+    <strong>Docker CLI</strong>
+    <span>
+      cheatsheet
+
+      
+      <abbr class='attribute-peg -new-layout hint--bottom' data-hint='New layout!'><span></span></abbr>
+      
+    </span>
+  </a>
+</li>
+
+            
           </ul>
         </div>
       </div>
@@ -490,7 +346,7 @@ function n(n,t,e){n.addEventListener?n.addEventListener(t,e):n.attachEvent("on"+
 "use strict";var e=u(require("./wrapify")),d=u(require("dom101/add-class")),t=u(require("dom101/on"));function u(e){return e&&e.__esModule?e:{default:e}}var a,o=document.querySelector("[data-js-main-body]");function r(){a||((0,d.default)(document.documentElement,"LoadDone"),a=!0)}o&&((0,e.default)(o),(0,d.default)(o,"-wrapified")),(0,t.default)(window,"load",r),setTimeout(r,5e3);
 },{"./wrapify":"hE9p","dom101/add-class":"G20n","dom101/on":"DJ2P"}]},{},["eoMl"], null)</script>
 <script src='./assets/packed/app.js?t=20210921184628'></script>
-
+<script src='https://cdn.jsdelivr.net/npm/prismjs@1.6.0/components/prism-bash.min.js'></script>
 
 
 </body>
