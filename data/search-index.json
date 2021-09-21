@@ -47,7 +47,7 @@
   "id": "linux",
   "title": "Linux",
   "url": "/linux",
-  "category": "Linux",
+  "category": "cli",
   "keywords": null,
   "content_html": "<h2 class=\"-three-column\" id=\"getting-started\">Getting started</h2>\n\n<h3 class=\"-prime\" id=\"clean-up-logs\">Clean up logs</h3>\n\n<h4 class=\"-file\" id=\"cleansh\">clean.sh</h4>\n\n<pre><code class=\"language-sh\">journalctl --disk-usage\nsudo journalctl --vacuum-size=500M\nsudo truncate -s 0 /var/log/syslog\n</code></pre>",
   "intro_html": "",
