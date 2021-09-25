@@ -36,7 +36,8 @@ $ cargo build
 {: .-file}
 ```rust
 use std::io::{Cursor,BufRead};
-let mut f = Cursor::new("hello\nworld\n".to_string());
+// let mut stdin = io::stdin();
+let mut stdin = Cursor::new("hello\nworld\n".to_string());
 let mut s = String::new();
 let _ = f.read_line(&mut s)?;
 println!("input: {}", s);
