@@ -32,7 +32,7 @@ $ cargo build
 ### Fake stdin
 {: .-prime}
 
-### intput.rs
+#### intput.rs
 {: .-file}
 ```rs
 use std::io::{Cursor,BufRead};
