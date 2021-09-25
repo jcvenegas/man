@@ -60,7 +60,7 @@
   "url": "/rust",
   "category": "Code",
   "keywords": null,
-  "content_html": "<h2 class=\"-three-column\" id=\"getting-started\">Getting started</h2>\n\n<h3 class=\"-prime\" id=\"hello-world\">Hello world</h3>\n\n<h4 class=\"-file\" id=\"hellors\">hello.rs</h4>\n\n<pre><code class=\"language-rust\">fn main() {\n  println!(\"message\");\n}\n</code></pre>\n\n<pre><code class=\"language-bash\">$ cargo build\n</code></pre>\n\n<h2 id=\"input\">Input</h2>\n\n<h3 class=\"-prime\" id=\"fake-stdin\">Fake stdin</h3>\n\n<h4 class=\"-file\" id=\"intputrs\">intput.rs</h4>\n<pre><code class=\"language-rust\">use std::io::{Cursor,BufRead};\nlet mut f = Cursor::new(\"hello\\nworld\\n\".to_string());\nlet mut s = String::new();\nlet _ = f.read_line(&amp;mut s)?;\nprintln!(\"input: {}\", s);\n</code></pre>\n\n<pre><code>hello world\n\n</code></pre>",
+  "content_html": "<h2 class=\"-three-column\" id=\"getting-started\">Getting started</h2>\n\n<h3 class=\"-prime\" id=\"hello-world\">Hello world</h3>\n\n<h4 class=\"-file\" id=\"hellors\">hello.rs</h4>\n\n<pre><code class=\"language-rust\">fn main() {\n  println!(\"message\");\n}\n</code></pre>\n\n<pre><code class=\"language-bash\">$ cargo build\n</code></pre>\n\n<h2 id=\"input\">Input</h2>\n\n<h3 class=\"-prime\" id=\"fake-stdin\">Fake stdin</h3>\n\n<h4 class=\"-file\" id=\"intputrs\">intput.rs</h4>\n<pre><code class=\"language-rust\">use std::io::{Cursor,BufRead};\n// let mut stdin = io::stdin();\nlet mut stdin = Cursor::new(\"hello\\nworld\\n\".to_string());\nlet mut s = String::new();\nlet _ = f.read_line(&amp;mut s)?;\nprintln!(\"input: {}\", s);\n</code></pre>\n\n<pre><code>hello world\n\n</code></pre>",
   "intro_html": "",
   "description_html": "",
   "tags": ["Featured"],
