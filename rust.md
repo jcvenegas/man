@@ -34,7 +34,7 @@ $ cargo build
 
 #### intput.rs
 {: .-file}
-```rs
+```rust
 use std::io::{Cursor,BufRead};
 let mut f = Cursor::new("hello\nworld\n".to_string());
 let mut s = String::new();
