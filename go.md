@@ -9,7 +9,7 @@ updated: 2020-06-21
 ---
 
 ## Getting started
-{: .-three-column}
+{: .-two-column}
 
 ### Introduction
 {: .-intro}
@@ -26,24 +26,12 @@ updated: 2020-06-21
 
 ```go
 package main
-
 import "fmt"
 
 func main() {
-  message := greetMe("world")
-  fmt.Println(message)
-}
-
-func greetMe(name string) string {
-  return "Hello, " + name + "!"
+  fmt.Println("hello")
 }
 ```
-
-```bash
-$ go build
-```
-
-Or try it out in the [Go repl](https://repl.it/languages/go), or [A Tour of Go](https://tour.golang.org/welcome/1).
 
 ### Variables
 
@@ -66,25 +54,19 @@ msg := "Hello"
 const Phi = 1.618
 ```
 
-Constants can be character, string, boolean, or numeric values.
-
-See: [Constants](https://tour.golang.org/basics/15)
-
 ## Basic types
 {: .-three-column}
 
 ### Strings
 
 ```go
-str := "Hello"
+str := "Hello" //type: string
 ```
 
 ```go
 str := `Multiline
 string`
 ```
-
-Strings are of type `string`.
 
 ### Numbers
 
@@ -97,22 +79,12 @@ num := 3 + 4i     // complex128
 num := byte('a')  // byte (alias for uint8)
 ```
 
-#### Other types
-
-```go
-var u uint = 7        // uint (unsigned)
-var p float32 = 22.7  // 32-bit float
-```
-
 ### Arrays
 
 ```go
 // var numbers [5]int
 numbers := [...]int{0, 0, 0, 0, 0}
 ```
-
-Arrays have a fixed size.
-
 ### Slices
 
 ```go
@@ -122,8 +94,16 @@ slice := []int{2, 3, 4}
 ```go
 slice := []byte("Hello")
 ```
+#### Append 
+```go
+a = append(a, b...)
+```
 
-Slices have a dynamic size, unlike arrays.
+#### Copy
+```go
+b := make([]T, len(a))
+copy(b, a)
+```
 
 ### Pointers
 
