@@ -20,5 +20,6 @@ updated: 2020-06-21
 ```sh
 journalctl --disk-usage
 sudo journalctl --vacuum-size=500M
-sudo truncate -s 0 /var/log/syslog
+sudo truncate -s 0 /var/log/syslog*
+sudo truncate -s 0 /var/log/kern*
 ```
