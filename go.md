@@ -241,40 +241,6 @@ import "fmt"
 import "math/rand"
 ```
 
-```go
-import (
-  "fmt"        // gives fmt.Println
-  "math/rand"  // gives rand.Intn
-)
-```
-
-Both are the same.
-
-See: [Importing](https://tour.golang.org/basics/1)
-
-### Aliases
-
-```go
-import r "math/rand"
-```
-{: data-line="1"}
-
-```go
-r.Intn()
-```
-
-### Exporting names
-
-```go
-func Hello () {
-  ···
-}
-```
-
-Exported names begin with capital letters.
-
-See: [Exported names](https://tour.golang.org/basics/3)
-
 ### Packages
 
 ```go
@@ -289,34 +255,16 @@ Every package file has to start with `package`.
 ### Goroutines
 
 ```go
-func main() {
-  // A "channel"
-  ch := make(chan string)
+// A "channel"
+ch := make(chan string)
 
-  // Start concurrent routines
-  go push("Moe", ch)
-  go push("Larry", ch)
-  go push("Curly", ch)
+// Start concurrent routines
+go func(){ ch <- "Foo" }()
+go func(){ ch <- "Bar" }()
 
-  // Read 3 results
-  // (Since our goroutines are concurrent,
-  // the order isn't guaranteed!)
-  fmt.Println(<-ch, <-ch, <-ch)
-}
+// Read 3 results
+fmt.Println(<-ch, <-ch)
 ```
-{: data-line="3,6,7,8,13"}
-
-```go
-func push(name string, ch chan string) {
-  msg := "Hey, " + name
-  ch <- msg
-}
-```
-{: data-line="3"}
-
-Channels are concurrency-safe communication objects, used in goroutines.
-
-See: [Goroutines](https://tour.golang.org/concurrency/1), [Channels](https://tour.golang.org/concurrency/2)
 
 ### Buffered channels
 
@@ -324,15 +272,12 @@ See: [Goroutines](https://tour.golang.org/concurrency/1), [Channels](https://tou
 ch := make(chan int, 2)
 ch <- 1
 ch <- 2
+//This wil fail, size is 2
 ch <- 3
 // fatal error:
 // all goroutines are asleep - deadlock!
 ```
-{: data-line="1"}
 
-Buffered channels limit the amount of messages it can keep.
-
-See: [Buffered channels](https://tour.golang.org/concurrency/3)
 
 ### Closing channels
 
@@ -374,23 +319,13 @@ func main() {
   for _, item := range itemList {
     // Increment WaitGroup Counter
     wg.Add(1)
-    go doOperation(item)
+    go func(){doSomehing...}()
   }
   // Wait for goroutines to finish
   wg.Wait()
   
 }
 ```
-{: data-line="1,4,8,12"}
-
-```go
-func doOperation(item string) {
-  defer wg.Done()
-  // do operation on item
-  // ...
-}
-```
-{: data-line="2"}
 
 A WaitGroup waits for a collection of goroutines to finish. The main goroutine calls Add to set the number of goroutines to wait for. The goroutine calls `wg.Done()` when it finishes.
 See: [WaitGroup](https://golang.org/pkg/sync/#WaitGroup)
