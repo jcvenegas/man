@@ -105,31 +105,52 @@ See: [Type conversions](https://tour.golang.org/basics/13)
 
 
 
-## Arrays
-### Arrays (static)
+## Arrays (static)
+### Define
 
 ```go
 // var numbers [5]int
 numbers := [...]int{0, 0, 0, 0, 0}
 ```
-### Slices (dynamic)
 
+## Slices (dynamic arrays)
+### Define
 ```go
 slice := []int{2, 3, 4}
 ```
-
 ```go
 slice := []byte("Hello")
 ```
-#### Append 
+
+### Insert val `x` in `i` index
+```go
+a = append(a[:i], append([]T{x}, a[i:]...)...)
+```
+### Append 
 ```go
 a = append(a, b...)
 ```
 
-#### Copy
+### Copy
 ```go
 b := make([]T, len(a))
 copy(b, a)
+```
+
+###  Cut range[i,j]
+```go
+a = append(a[:i], a[j:]...)
+```
+
+
+###  Delete `i` element
+```go
+a = append(a[:i], a[i+1:]...)
+```
+
+### Insert slice `b` into slice `a` at `i` index
+```go
+a = append(a[:i], append(b, a[i:]...)...)
 ```
 
 ## Flow control
