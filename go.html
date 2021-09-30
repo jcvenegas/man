@@ -69,11 +69,11 @@
 <!-- deferred css -->
 <script id='deferred-css'>;(function(links){(requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame||(function(fn){window.addEventListener('load',fn)}))(function(){var h=document.getElementsByTagName('head')[0],l,i;for (i=0;i<links.length;i++){l=document.createElement('link');l.rel='stylesheet';l.href=links[i];h.appendChild(l);}})})([
 'https://fonts.googleapis.com/css?family=Cousine',
-'./assets/2017/style.css?t=20210930164340'
+'./assets/2017/style.css?t=20210930170101'
 ])</script>
 <noscript id='deferred-css-fallback'>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Cousine'>
-<link rel='stylesheet' href='./assets/2017/style.css?t=20210930164340'>
+<link rel='stylesheet' href='./assets/2017/style.css?t=20210930170101'>
 </noscript>
 
 <script type='application/ld+json'>
@@ -85,7 +85,7 @@
     "@id": "https://google.com/article"
   },
   "headline": "Go cheatsheet",
-  "image": [ "https://assets.devhints.io/previews/go.jpg?t=20210930164340" ],
+  "image": [ "https://assets.devhints.io/previews/go.jpg?t=20210930170101" ],
   "description": "The one-page guide to Go: usage, examples, links, snippets, and more."
 }
 </script>
@@ -352,35 +352,6 @@ for n != x {
 import "math/rand"
 </code></pre>
 
-<pre><code class="language-go">import (
-  "fmt"        // gives fmt.Println
-  "math/rand"  // gives rand.Intn
-)
-</code></pre>
-
-<p>Both are the same.</p>
-
-<p>See: <a href="https://tour.golang.org/basics/1">Importing</a></p>
-
-<h3 id="aliases">Aliases</h3>
-
-<pre data-line="1"><code class="language-go">import r "math/rand"
-</code></pre>
-
-<pre><code class="language-go">r.Intn()
-</code></pre>
-
-<h3 id="exporting-names">Exporting names</h3>
-
-<pre><code class="language-go">func Hello () {
-  ···
-}
-</code></pre>
-
-<p>Exported names begin with capital letters.</p>
-
-<p>See: <a href="https://tour.golang.org/basics/3">Exported names</a></p>
-
 <h3 id="packages-1">Packages</h3>
 
 <pre><code class="language-go">package hello
@@ -392,45 +363,27 @@ import "math/rand"
 
 <h3 id="goroutines">Goroutines</h3>
 
-<pre data-line="3,6,7,8,13"><code class="language-go">func main() {
-  // A "channel"
-  ch := make(chan string)
+<pre><code class="language-go">// A "channel"
+ch := make(chan string)
 
-  // Start concurrent routines
-  go push("Moe", ch)
-  go push("Larry", ch)
-  go push("Curly", ch)
+// Start concurrent routines
+go func(){ ch &lt;- "Foo" }()
+go func(){ ch &lt;- "Bar" }()
 
-  // Read 3 results
-  // (Since our goroutines are concurrent,
-  // the order isn't guaranteed!)
-  fmt.Println(&lt;-ch, &lt;-ch, &lt;-ch)
-}
+// Read 3 results
+fmt.Println(&lt;-ch, &lt;-ch)
 </code></pre>
-
-<pre data-line="3"><code class="language-go">func push(name string, ch chan string) {
-  msg := "Hey, " + name
-  ch &lt;- msg
-}
-</code></pre>
-
-<p>Channels are concurrency-safe communication objects, used in goroutines.</p>
-
-<p>See: <a href="https://tour.golang.org/concurrency/1">Goroutines</a>, <a href="https://tour.golang.org/concurrency/2">Channels</a></p>
 
 <h3 id="buffered-channels">Buffered channels</h3>
 
-<pre data-line="1"><code class="language-go">ch := make(chan int, 2)
+<pre><code class="language-go">ch := make(chan int, 2)
 ch &lt;- 1
 ch &lt;- 2
+//This wil fail, size is 2
 ch &lt;- 3
 // fatal error:
 // all goroutines are asleep - deadlock!
 </code></pre>
-
-<p>Buffered channels limit the amount of messages it can keep.</p>
-
-<p>See: <a href="https://tour.golang.org/concurrency/3">Buffered channels</a></p>
 
 <h3 id="closing-channels">Closing channels</h3>
 
@@ -458,7 +411,7 @@ close(ch)
 
 <h3 id="waitgroup">WaitGroup</h3>
 
-<pre data-line="1,4,8,12"><code class="language-go">import "sync"
+<pre><code class="language-go">import "sync"
 
 func main() {
   var wg sync.WaitGroup
@@ -466,18 +419,11 @@ func main() {
   for _, item := range itemList {
     // Increment WaitGroup Counter
     wg.Add(1)
-    go doOperation(item)
+    go func(){doSomehing...}()
   }
   // Wait for goroutines to finish
   wg.Wait()
   
-}
-</code></pre>
-
-<pre data-line="2"><code class="language-go">func doOperation(item string) {
-  defer wg.Done()
-  // do operation on item
-  // ...
 }
 </code></pre>
 
@@ -710,7 +656,7 @@ function n(n,t,e){n.addEventListener?n.addEventListener(t,e):n.attachEvent("on"+
 },{}],"eoMl":[function(require,module,exports) {
 "use strict";var e=u(require("./wrapify")),d=u(require("dom101/add-class")),t=u(require("dom101/on"));function u(e){return e&&e.__esModule?e:{default:e}}var a,o=document.querySelector("[data-js-main-body]");function r(){a||((0,d.default)(document.documentElement,"LoadDone"),a=!0)}o&&((0,e.default)(o),(0,d.default)(o,"-wrapified")),(0,t.default)(window,"load",r),setTimeout(r,5e3);
 },{"./wrapify":"hE9p","dom101/add-class":"G20n","dom101/on":"DJ2P"}]},{},["eoMl"], null)</script>
-<script src='./assets/packed/app.js?t=20210930164340'></script>
+<script src='./assets/packed/app.js?t=20210930170101'></script>
 <script src='https://cdn.jsdelivr.net/npm/prismjs@1.6.0/components/prism-go.min.js'></script><script src='https://cdn.jsdelivr.net/npm/prismjs@1.6.0/components/prism-bash.min.js'></script>
 
 
