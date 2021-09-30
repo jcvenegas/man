@@ -72,6 +72,39 @@ num := 3 + 4i     // complex128
 num := byte('a')  // byte (alias for uint8)
 ```
 
+### Pointers
+
+```go
+  b := *getPointer()
+```
+{: data-line="1"}
+
+```go
+func getPointer () (myPointer *int) {
+  a := 234
+  return &a
+}
+```
+{: data-line="1,3"}
+
+```go
+a := new(int)
+*a = 234
+```
+{: data-line="2"}
+
+### Type conversions
+
+```go
+i := 2
+f := float64(i)
+u := uint(i)
+```
+
+See: [Type conversions](https://tour.golang.org/basics/13)
+
+
+
 ## Arrays
 ### Arrays (static)
 
@@ -98,44 +131,6 @@ a = append(a, b...)
 b := make([]T, len(a))
 copy(b, a)
 ```
-
-### Pointers
-
-```go
-func main () {
-  b := *getPointer()
-  fmt.Println("Value is", b)
-}
-```
-{: data-line="2"}
-
-```go
-func getPointer () (myPointer *int) {
-  a := 234
-  return &a
-}
-```
-{: data-line="3"}
-
-```go
-a := new(int)
-*a = 234
-```
-{: data-line="2"}
-
-Pointers point to a memory location of a variable. Go is fully garbage-collected.
-
-See: [Pointers](https://tour.golang.org/moretypes/1)
-
-### Type conversions
-
-```go
-i := 2
-f := float64(i)
-u := uint(i)
-```
-
-See: [Type conversions](https://tour.golang.org/basics/13)
 
 ## Flow control
 ### Switch
@@ -328,9 +323,7 @@ See: [Range and close](https://tour.golang.org/concurrency/4)
 ### WaitGroup
 
 ```go
-import "sync"
-
-func main() {
+//import "sync"
   var wg sync.WaitGroup
   
   for _, item := range itemList {
@@ -340,8 +333,6 @@ func main() {
   }
   // Wait for goroutines to finish
   wg.Wait()
-  
-}
 ```
 
 A WaitGroup waits for a collection of goroutines to finish. The main goroutine calls Add to set the number of goroutines to wait for. The goroutine calls `wg.Done()` when it finishes.
@@ -433,41 +424,25 @@ See: [Pointer receivers](https://tour.golang.org/methods/4)
 ### A basic interface
 
 ```go
-type Shape interface {
-  Area() float64
-  Perimeter() float64
+type Inteface interface {
+  InterfaceMethod() float64
 }
 ```
 
 ### Struct
 
 ```go
-type Rectangle struct {
-  Length, Width float64
-}
+type Struct struct {}
 ```
 
-Struct `Rectangle` implicitly implements interface `Shape` by implementing all of its methods.
 
 ### Methods
 
 ```go
-func (r Rectangle) Area() float64 {
-  return r.Length * r.Width
-}
-
-func (r Rectangle) Perimeter() float64 {
-  return 2 * (r.Length + r.Width)
+func (s Struct) Area() float64 {
+  return 1.0
 }
 ```
 
-The methods defined in `Shape` are implemented in `Rectangle`.
+The methods defined in `Interface` are implemented in `Struct`.
 
-### Interface example
-
-```go
-func main() {
-  var r Shape = Rectangle{Length: 3, Width: 4}
-  fmt.Printf("Type of r: %T, Area: %v, Perimeter: %v.", r, r.Area(), r.Perimeter())
-}
-```
