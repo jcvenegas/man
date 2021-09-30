@@ -69,11 +69,11 @@
 <!-- deferred css -->
 <script id='deferred-css'>;(function(links){(requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame||(function(fn){window.addEventListener('load',fn)}))(function(){var h=document.getElementsByTagName('head')[0],l,i;for (i=0;i<links.length;i++){l=document.createElement('link');l.rel='stylesheet';l.href=links[i];h.appendChild(l);}})})([
 'https://fonts.googleapis.com/css?family=Cousine',
-'./assets/2017/style.css?t=20210930170811'
+'./assets/2017/style.css?t=20210930174710'
 ])</script>
 <noscript id='deferred-css-fallback'>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Cousine'>
-<link rel='stylesheet' href='./assets/2017/style.css?t=20210930170811'>
+<link rel='stylesheet' href='./assets/2017/style.css?t=20210930174710'>
 </noscript>
 
 <script type='application/ld+json'>
@@ -85,7 +85,7 @@
     "@id": "https://google.com/article"
   },
   "headline": "Go cheatsheet",
-  "image": [ "https://assets.devhints.io/previews/go.jpg?t=20210930170811" ],
+  "image": [ "https://assets.devhints.io/previews/go.jpg?t=20210930174710" ],
   "description": "The one-page guide to Go: usage, examples, links, snippets, and more."
 }
 </script>
@@ -385,6 +385,21 @@ ch &lt;- 3
 // all goroutines are asleep - deadlock!
 </code></pre>
 
+<h3 id="read-from-multiple-channels">read from multiple channels</h3>
+
+<pre><code class="language-go">	c1 := make(chan string)
+	c2 := make(chan string)
+	go func() { c1 &lt;- "one" }()
+	go func() { c2 &lt;- "two" }()
+
+	select {
+	case msg1 := &lt;-c1:
+		fmt.Println("received", msg1)
+	case msg2 := &lt;-c2:
+		fmt.Println("received", msg2)
+	}
+</code></pre>
+
 <h3 id="closing-channels">Closing channels</h3>
 
 <h4 id="closes-a-channel">Closes a channel</h4>
@@ -430,43 +445,19 @@ func main() {
 <p>A WaitGroup waits for a collection of goroutines to finish. The main goroutine calls Add to set the number of goroutines to wait for. The goroutine calls <code>wg.Done()</code> when it finishes.
 See: <a href="https://golang.org/pkg/sync/#WaitGroup">WaitGroup</a></p>
 
-<h2 id="error-control">Error control</h2>
+<h2 id="error-handling">Error Handling</h2>
 
-<h3 id="defer">Defer</h3>
+<h3 id="defer-error-check">Defer error check</h3>
 
-<pre data-line="2"><code class="language-go">func main() {
-  defer fmt.Println("Done")
-  fmt.Println("Working...")
-}
-</code></pre>
-
-<p>Defers running a function until the surrounding function returns.
-The arguments are evaluated immediately, but the function call is not ran until later.</p>
-
-<p>See: <a href="https://blog.golang.org/defer-panic-and-recover">Defer, panic and recover</a></p>
-
-<h3 id="deferring-functions">Deferring functions</h3>
-
-<pre data-line="2,3,4"><code class="language-go">func main() {
-  defer func() {
-    fmt.Println("Done")
+<pre><code class="language-go">func function() (err error) {
+  defer func(){
+    if err != nil {
+      err = fmt.Errof("Add Context(%s)",err)
+    }
   }()
-  fmt.Println("Working...")
+  //...
 }
 </code></pre>
-
-<p>Lambdas are better suited for defer blocks.</p>
-
-<pre data-line="3,4,5"><code class="language-go">func main() {
-  var d = int64(0)
-  defer func(d *int64) {
-    fmt.Printf("&amp; %v Unix Sec\n", *d)
-  }(&amp;d)
-  fmt.Print("Done ")
-  d = time.Now().Unix()
-}
-</code></pre>
-<p>The defer func uses current value of d, unless we use a pointer to get final value at end of main.</p>
 
 <h2 class="-three-column" id="structs">Structs</h2>
 
@@ -656,7 +647,7 @@ function n(n,t,e){n.addEventListener?n.addEventListener(t,e):n.attachEvent("on"+
 },{}],"eoMl":[function(require,module,exports) {
 "use strict";var e=u(require("./wrapify")),d=u(require("dom101/add-class")),t=u(require("dom101/on"));function u(e){return e&&e.__esModule?e:{default:e}}var a,o=document.querySelector("[data-js-main-body]");function r(){a||((0,d.default)(document.documentElement,"LoadDone"),a=!0)}o&&((0,e.default)(o),(0,d.default)(o,"-wrapified")),(0,t.default)(window,"load",r),setTimeout(r,5e3);
 },{"./wrapify":"hE9p","dom101/add-class":"G20n","dom101/on":"DJ2P"}]},{},["eoMl"], null)</script>
-<script src='./assets/packed/app.js?t=20210930170811'></script>
+<script src='./assets/packed/app.js?t=20210930174710'></script>
 <script src='https://cdn.jsdelivr.net/npm/prismjs@1.6.0/components/prism-go.min.js'></script><script src='https://cdn.jsdelivr.net/npm/prismjs@1.6.0/components/prism-bash.min.js'></script>
 
 
