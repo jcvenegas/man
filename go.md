@@ -279,6 +279,22 @@ ch <- 3
 ```
 
 
+### read from multiple channels
+
+```go
+	c1 := make(chan string)
+	c2 := make(chan string)
+	go func() { c1 <- "one" }()
+	go func() { c2 <- "two" }()
+
+	select {
+	case msg1 := <-c1:
+		fmt.Println("received", msg1)
+	case msg2 := <-c2:
+		fmt.Println("received", msg2)
+	}
+```
+
 ### Closing channels
 
 #### Closes a channel
@@ -331,49 +347,20 @@ A WaitGroup waits for a collection of goroutines to finish. The main goroutine c
 See: [WaitGroup](https://golang.org/pkg/sync/#WaitGroup)
 
 
-## Error control
+## Error Handling
 
-### Defer
-
-```go
-func main() {
-  defer fmt.Println("Done")
-  fmt.Println("Working...")
-}
-```
-{: data-line="2"}
-
-Defers running a function until the surrounding function returns.
-The arguments are evaluated immediately, but the function call is not ran until later.
-
-See: [Defer, panic and recover](https://blog.golang.org/defer-panic-and-recover)
-
-### Deferring functions
+### Defer error check
 
 ```go
-func main() {
-  defer func() {
-    fmt.Println("Done")
+func function() (err error) {
+  defer func(){
+    if err != nil {
+      err = fmt.Errof("Add Context(%s)",err)
+    }
   }()
-  fmt.Println("Working...")
+  //...
 }
 ```
-{: data-line="2,3,4"}
-
-Lambdas are better suited for defer blocks.
-
-```go
-func main() {
-  var d = int64(0)
-  defer func(d *int64) {
-    fmt.Printf("& %v Unix Sec\n", *d)
-  }(&d)
-  fmt.Print("Done ")
-  d = time.Now().Unix()
-}
-```
-{: data-line="3,4,5"}
-The defer func uses current value of d, unless we use a pointer to get final value at end of main.
 
 ## Structs
 {: .-three-column}
