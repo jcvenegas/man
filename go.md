@@ -439,7 +439,7 @@ type Struct struct {}
 ### Methods
 
 ```go
-func (s Struct) Area() float64 {
+func (s Struct) InterfaceMethod() float64 {
   return 1.0
 }
 ```
