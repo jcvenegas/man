@@ -72,6 +72,7 @@ num := 3 + 4i     // complex128
 num := byte('a')  // byte (alias for uint8)
 ```
 
+## Arrays
 ### Arrays (static)
 
 ```go
@@ -376,32 +377,12 @@ type Vertex struct {
 {: data-line="1,2,3,4"}
 
 ```go
-func main() {
-  v := Vertex{1, 2}
-  v.X = 4
-  fmt.Println(v.X, v.Y)
-}
+ v := Vertex{1, 2}
+
 ```
 
 See: [Structs](https://tour.golang.org/moretypes/2)
 
-### Literals
-
-```go
-v := Vertex{X: 1, Y: 2}
-```
-
-```go
-// Field names can be omitted
-v := Vertex{1, 2}
-```
-
-```go
-// Y is implicit
-v := Vertex{X: 1}
-```
-
-You can also put field names.
 
 ### Pointers to structs
 
@@ -415,13 +396,6 @@ Doing `v.X` is the same as doing `(*v).X`, when `v` is a pointer.
 ## Methods
 
 ### Receivers
-
-```go
-type Vertex struct {
-  X, Y float64
-}
-```
-
 ```go
 func (v Vertex) Abs() float64 {
   return math.Sqrt(v.X * v.X + v.Y * v.Y)
@@ -433,10 +407,6 @@ func (v Vertex) Abs() float64 {
 v := Vertex{1, 2}
 v.Abs()
 ```
-
-There are no classes, but you can define functions with _receivers_.
-
-See: [Methods](https://tour.golang.org/methods/1)
 
 ### Mutation
 
@@ -501,20 +471,3 @@ func main() {
   fmt.Printf("Type of r: %T, Area: %v, Perimeter: %v.", r, r.Area(), r.Perimeter())
 }
 ```
-
-## References
-
-### Official resources
-{: .-intro}
-
-- [A tour of Go](https://tour.golang.org/welcome/1) _(tour.golang.org)_
-- [Golang wiki](https://github.com/golang/go/wiki/) _(github.com)_
-- [Effective Go](https://golang.org/doc/effective_go.html) _(golang.org)_
-
-### Other links
-{: .-intro}
-
-- [Go by Example](https://gobyexample.com/) _(gobyexample.com)_
-- [Awesome Go](https://awesome-go.com/) _(awesome-go.com)_
-- [JustForFunc Youtube](https://www.youtube.com/channel/UC_BzFbxG2za3bp5NRRRXJSw) _(youtube.com)_
-- [Style Guide](https://github.com/golang/go/wiki/CodeReviewComments) _(github.com)_
