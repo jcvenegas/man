@@ -9,7 +9,7 @@ updated: 2020-06-21
 ---
 
 ## Getting started
-{: .-two-column}
+{: .-three-column}
 
 ### Introduction
 {: .-intro}
