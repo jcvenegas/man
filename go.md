@@ -122,35 +122,74 @@ slice := []int{2, 3, 4}
 slice := []byte("Hello")
 ```
 
-### Insert val `x` in `i` index
+### Insert: `a.Insert(x, at(i))`
 ```go
 a = append(a[:i], append([]T{x}, a[i:]...)...)
 ```
-### Append 
+### Append slice: `a.AppendSlice(b)`
 ```go
 a = append(a, b...)
 ```
 
-### Copy
+### Copy: `b = a.Copy()`
 ```go
 b := make([]T, len(a))
 copy(b, a)
 ```
 
-###  Cut range[i,j]
+###  Cut: `a.DeleteRange(i,j)`
 ```go
 a = append(a[:i], a[j:]...)
 ```
 
-
-###  Delete `i` element
+###  Delete: `a.Delete(at(i))`
 ```go
 a = append(a[:i], a[i+1:]...)
 ```
 
-### Insert slice `b` into slice `a` at `i` index
+### Insert slice:  a.InsertSlice(b, at(i))
 ```go
 a = append(a[:i], append(b, a[i:]...)...)
+```
+
+### Push: `a.Push(x)`
+```go
+a = append(a, x)
+```
+
+### Pop: `a.Pop()`
+```go
+x, a = a[len(a)-1], a[:len(a)-1]
+```
+
+### Push front: `a.PushFront(x)`
+```go
+a = append([]T{x}, a...)
+```
+### Pop Front/Shift: `a.PopFront()`
+```go
+x, a = a[0], a[1:]
+```
+
+### Sub slice
+```go
+// high: non inclusive
+s = a[low:high]
+```
+```go
+a[:high] // from beining until high
+a[low:] // from low until end
+```
+
+### Sort: a.sort()
+```go
+import  "sort"
+sort.Strings(strs)
+sort.Ints(ints)
+```
+#### Reverse
+```go
+sort.Sort(sort.Reverse(sort.IntSlice(s)))
 ```
 
 ## Flow control
