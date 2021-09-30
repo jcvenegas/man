@@ -72,13 +72,13 @@ num := 3 + 4i     // complex128
 num := byte('a')  // byte (alias for uint8)
 ```
 
-### Arrays
+### Arrays (static)
 
 ```go
 // var numbers [5]int
 numbers := [...]int{0, 0, 0, 0, 0}
 ```
-### Slices
+### Slices (dynamic)
 
 ```go
 slice := []int{2, 3, 4}
@@ -137,36 +137,6 @@ u := uint(i)
 See: [Type conversions](https://tour.golang.org/basics/13)
 
 ## Flow control
-{: .-three-column}
-
-### Conditional
-
-```go
-if day == "sunday" || day == "saturday" {
-  rest()
-} else if day == "monday" && isTired() {
-  groan()
-} else {
-  work()
-}
-```
-{: data-line="1,3,5"}
-
-See: [If](https://tour.golang.org/flowcontrol/5)
-
-### Statements in if
-
-```go
-if _, err := doThing(); err != nil {
-  fmt.Println("Uh oh")
-}
-```
-{: data-line="1"}
-
-A condition in an `if` statement can be preceded with a statement before a `;`. Variables declared by the statement are only in scope until the end of the `if`.
-
-See: [If with a short statement](https://tour.golang.org/flowcontrol/6)
-
 ### Switch
 
 ```go
