@@ -112,7 +112,7 @@ s := i.(string)
 
 See: [Type conversions](https://tour.golang.org/basics/13)
 
-
+<div style="page-break-after: always"></div>
 
 ## Arrays (static)
 {: .-three-column}
