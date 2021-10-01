@@ -114,6 +114,7 @@ numbers := [...]int{0, 0, 0, 0, 0}
 ```
 
 ## Slices (dynamic arrays)
+{: .-three-column}
 ### Define
 ```go
 slice := []int{2, 3, 4}
@@ -193,6 +194,7 @@ sort.Sort(sort.Reverse(sort.IntSlice(s)))
 ```
 
 ## Flow control
+{: .-three-column}
 ### Switch
 
 ```go
