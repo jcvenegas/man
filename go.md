@@ -25,6 +25,9 @@ func main() {
   fmt.Println("hello")
 }
 ```
+Every package file has to start with `package`.
+
+
 
 ### Variables
 
@@ -205,12 +208,7 @@ sort.Sort(sort.Reverse(sort.IntSlice(s)))
 ```go
 switch day {
   case "sunday":
-    // cases don't "fall through" by default!
-    fallthrough
-
-  case "saturday":
-    rest()
-
+    doSomething()
   default:
     work()
 }
@@ -221,8 +219,8 @@ See: [Switch](https://github.com/golang/go/wiki/Switch)
 ### For loop
 
 ```go
-for count := 0; count <= 10; count++ {
-  fmt.Println("My counter is at", count)
+for i := 0; i <= 10; i++ {
+  fmt.Println("i=", count)
 }
 ```
 
@@ -231,9 +229,9 @@ See: [For loops](https://tour.golang.org/flowcontrol/1)
 ### For-Range loop
 
 ```go
-entry := []string{"Jack","John","Jones"}
+entry := []string{"a","b","c"}
 for i, val := range entry {
-  fmt.Printf("At position %d, the character %s is present\n", i, val)
+  fmt.Printf("i=%d, val=%s\n", i, val)
 }
 ```
 
@@ -293,19 +291,6 @@ func split(sum int) (x, y int) {
 By defining the return value names in the signature, a `return` (no args) will return variables with those names.
 
 See: [Named return values](https://tour.golang.org/basics/7)
-
-## Packages
-{: .-three-column}
-
-### Packages
-
-```go
-package main
-...
-```
-
-Every package file has to start with `package`.
-
 ## Concurrency
 {: .-three-column}
 
@@ -430,7 +415,6 @@ type Vertex struct {
 
 ```go
  v := Vertex{1, 2}
-
 ```
 
 See: [Structs](https://tour.golang.org/moretypes/2)
