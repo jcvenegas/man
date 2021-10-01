@@ -116,6 +116,8 @@ numbers := [...]int{0, 0, 0, 0, 0}
 ```
 
 ## Slices (dynamic arrays)
+{: .-three-column}
+
 ### Define
 ```go
 slice := []int{2, 3, 4}
