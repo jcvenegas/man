@@ -182,13 +182,13 @@ s = a[low:high]
 a[:high] // from beining until high
 a[low:] // from low until end
 ```
-#### Sort: `a.sort()`
+#### Sort: `a.Sort()`
 ```go
 import  "sort"
 sort.Strings(strs)
 sort.Ints(ints)
 ```
-#### Reverse: `s.sort().reverse()`
+#### Reverse: `s.Sort().Reverse()`
 ```go
 sort.Sort(sort.Reverse(sort.IntSlice(s)))
 ```
@@ -198,30 +198,42 @@ sort.Sort(sort.Reverse(sort.IntSlice(s)))
 {: .-three-column}
 
 ### Goroutines
-
+#### New: `channel.New()`
 ```go
 // A "channel"
 ch := make(chan string)
-
+```
+{: data-line="2"}
+#### Write: `channel.Write(val)`
+```go
 // Start concurrent routines
 go func(){ ch <- "Foo" }()
 go func(){ ch <- "Bar" }()
-
-// Read 3 results
+```
+{: data-line="2,3"}
+#### Read: `val=channel.Read()`
+```go
 fmt.Println(<-ch, <-ch)
 ```
+{: data-line="2"}
 
 ### Buffered channels
-
+#### New: `channel.New(size)`
 ```go
 ch := make(chan int, 2)
+```
+```go
 ch <- 1
 ch <- 2
 //This wil fail, size is 2
+```
+```go
 ch <- 3
 // fatal error:
 // all goroutines are asleep - deadlock!
 ```
+Write more than size is a runtime error.
+
 
 
 ### read from multiple channels
