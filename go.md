@@ -103,6 +103,12 @@ i := 2
 f := float64(i)
 u := uint(i)
 ```
+#### type assertion
+```
+var i interface{} = "hello"
+s := i.(string)
+```
+{: data-line="2"}
 
 See: [Type conversions](https://tour.golang.org/basics/13)
 
