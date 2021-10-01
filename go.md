@@ -153,7 +153,7 @@ a = append(a[:i], a[j:]...)
 ```go
 a = append(a[:i], a[i+1:]...)
 ```
-#### Insert slice:  a.InsertSlice(b, at(i))
+#### Insert slice: `a.InsertSlice(b, at(i))`
 ```go
 a = append(a[:i], append(b, a[i:]...)...)
 ```
@@ -173,7 +173,7 @@ a = append([]T{x}, a...)
 ```go
 x, a = a[0], a[1:]
 ```
-#### Sub slice
+#### Sub slice: `a[i..j]`
 ```go
 // high: non inclusive
 s = a[low:high]
@@ -182,13 +182,13 @@ s = a[low:high]
 a[:high] // from beining until high
 a[low:] // from low until end
 ```
-#### Sort: a.sort()
+#### Sort: `a.sort()`
 ```go
 import  "sort"
 sort.Strings(strs)
 sort.Ints(ints)
 ```
-#### Reverse
+#### Reverse: `s.sort().reverse()`
 ```go
 sort.Sort(sort.Reverse(sort.IntSlice(s)))
 ```
