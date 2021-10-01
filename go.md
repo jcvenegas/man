@@ -73,25 +73,30 @@ num := byte('a')  // byte (alias for uint8)
 ```
 
 ### Pointers
-
 ```go
-  b := *getPointer()
+	i, j := 42, 2701
 ```
-{: data-line="1"}
-
 ```go
-func getPointer () (myPointer *int) {
-  a := 234
-  return &a
-}
+	p := &i         // point to i
 ```
-{: data-line="1,3"}
-
 ```go
-a := new(int)
-*a = 234
+	fmt.Println(*p) // read i through the pointer
 ```
-{: data-line="2"}
+```go
+	*p = 21         // set i through the pointer
+```
+```go
+	fmt.Println(i)  // see the new value of i
+```
+```go
+	p = &j         // point to j
+```
+```go
+	*p = *p / 37   // divide j through the pointer
+```
+```go
+fmt.Println(j) // see the new value of j```
+```
 
 ### Type conversions
 
