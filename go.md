@@ -74,29 +74,24 @@ num := byte('a')  // byte (alias for uint8)
 
 ### Pointers
 ```go
-	i, j := 42, 2701
+i, j := 42, 2701
 ```
 ```go
-	p := &i         // point to i
+p := &i  // point to i
 ```
+{: data-line="1"}
 ```go
-	fmt.Println(*p) // read i through the pointer
+fmt.Println(*p) // read i with p
 ```
+{: data-line="1"}
 ```go
-	*p = 21         // set i through the pointer
+*p = 21 // set i with p
 ```
+{: data-line="1"}
 ```go
-	fmt.Println(i)  // see the new value of i
+*p = *p / 37 // divide i with p
 ```
-```go
-	p = &j         // point to j
-```
-```go
-	*p = *p / 37   // divide j through the pointer
-```
-```go
-fmt.Println(j) // see the new value of j```
-```
+{: data-line="1"}
 
 ### Type conversions
 
@@ -302,17 +297,11 @@ See: [Named return values](https://tour.golang.org/basics/7)
 ## Packages
 {: .-three-column}
 
-### Importing
-
-```go
-import "fmt"
-import "math/rand"
-```
-
 ### Packages
 
 ```go
-package hello
+package main
+...
 ```
 
 Every package file has to start with `package`.
@@ -506,7 +495,6 @@ type Inteface interface {
 ```go
 type Struct struct {}
 ```
-
 
 ### Methods
 
