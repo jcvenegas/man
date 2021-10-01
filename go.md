@@ -131,60 +131,49 @@ numbers := [...]int{0, 0, 0, 0, 0}
 ```go
 slice := []int{2, 3, 4}
 ```
-```go
-slice := []byte("Hello")
-```
 
-### Insert: `a.Insert(x, at(i))`
+#### Insert: `a.Insert(x, at(i))`
 ```go
 a = append(a[:i], append([]T{x}, a[i:]...)...)
 ```
-### Append slice: `a.AppendSlice(b)`
+#### Append slice: `a.AppendSlice(b)`
 ```go
 a = append(a, b...)
 ```
-
-### Copy: `b = a.Copy()`
+#### Copy: `b = a.Copy()`
 ```go
 b := make([]T, len(a))
 copy(b, a)
 ```
-
-###  Cut: `a.DeleteRange(i,j)`
+####  Cut: `a.DeleteRange(i,j)`
 ```go
 a = append(a[:i], a[j:]...)
 ```
-
-###  Delete: `a.Delete(at(i))`
+####  Delete: `a.Delete(at(i))`
 ```go
 a = append(a[:i], a[i+1:]...)
 ```
-
-### Insert slice:  a.InsertSlice(b, at(i))
+#### Insert slice:  a.InsertSlice(b, at(i))
 ```go
 a = append(a[:i], append(b, a[i:]...)...)
 ```
-
-### Push: `a.Push(x)`
+#### Push: `a.Push(x)`
 ```go
 a = append(a, x)
 ```
-
-### Pop: `a.Pop()`
+#### Pop: `a.Pop()`
 ```go
 x, a = a[len(a)-1], a[:len(a)-1]
 ```
-
-### Push front: `a.PushFront(x)`
+#### Push front: `a.PushFront(x)`
 ```go
 a = append([]T{x}, a...)
 ```
-### Pop Front/Shift: `a.PopFront()`
+#### Pop Front/Shift: `a.PopFront()`
 ```go
 x, a = a[0], a[1:]
 ```
-
-### Sub slice
+#### Sub slice
 ```go
 // high: non inclusive
 s = a[low:high]
@@ -193,8 +182,7 @@ s = a[low:high]
 a[:high] // from beining until high
 a[low:] // from low until end
 ```
-
-### Sort: a.sort()
+#### Sort: a.sort()
 ```go
 import  "sort"
 sort.Strings(strs)
@@ -205,98 +193,7 @@ sort.Ints(ints)
 sort.Sort(sort.Reverse(sort.IntSlice(s)))
 ```
 
-## Flow control
-{: .-three-column}
 
-
-### Switch
-
-```go
-switch day {
-  case "sunday":
-    doSomething()
-  default:
-    work()
-}
-```
-
-See: [Switch](https://github.com/golang/go/wiki/Switch)
-
-### For loop
-
-```go
-for i := 0; i <= 10; i++ {
-  fmt.Println("i=", count)
-}
-```
-
-See: [For loops](https://tour.golang.org/flowcontrol/1)
-
-### For-Range loop
-
-```go
-entry := []string{"a","b","c"}
-for i, val := range entry {
-  fmt.Printf("i=%d, val=%s\n", i, val)
-}
-```
-
-See: [For-Range loops](https://gobyexample.com/range)
-
-### While loop
-
-```go
-n := 0
-x := 42
-for n != x {
-  n := guess()
-}
-```
-
-See: [Go's "while"](https://tour.golang.org/flowcontrol/3)
-
-## Functions
-{: .-three-column}
-
-### Lambdas
-
-```go
-myfunc := func() bool {
-  return x > 10000
-}
-```
-{: data-line="1"}
-
-Functions are first class objects.
-
-### Multiple return types
-
-```go
-a, b := getMessage()
-```
-
-```go
-func getMessage() (a string, b string) {
-  return "Hello", "World"
-}
-```
-{: data-line="2"}
-
-
-### Named return values
-
-```go
-func split(sum int) (x, y int) {
-  x = sum * 4 / 9
-  y = sum - x
-  return
-}
-```
-{: data-line="4"}
-
-By defining the return value names in the signature, a `return` (no args) will return variables with those names.
-
-See: [Named return values](https://tour.golang.org/basics/7)
 ## Concurrency
 {: .-three-column}
 
@@ -330,17 +227,12 @@ ch <- 3
 ### read from multiple channels
 
 ```go
-	c1 := make(chan string)
-	c2 := make(chan string)
-	go func() { c1 <- "one" }()
-	go func() { c2 <- "two" }()
-
-	select {
-	case msg1 := <-c1:
-		fmt.Println("received", msg1)
-	case msg2 := <-c2:
-		fmt.Println("received", msg2)
-	}
+select {
+case msg1 := <-c1:
+	fmt.Println("received", msg1)
+case msg2 := <-c2:
+	fmt.Println("received", msg2)
+}
 ```
 
 ### Closing channels
@@ -473,26 +365,109 @@ See: [Pointer receivers](https://tour.golang.org/methods/4)
 ## Interfaces
 
 ### A basic interface
-
 ```go
 type Inteface interface {
   InterfaceMethod() float64
 }
 ```
-
-### Struct
-
+#### Struct
 ```go
 type Struct struct {}
 ```
-
-### Methods
-
+#### Methods
 ```go
 func (s Struct) InterfaceMethod() float64 {
   return 1.0
 }
 ```
 
-The methods defined in `Interface` are implemented in `Struct`.
+## Flow control
+{: .-three-column}
 
+### Switch
+
+```go
+switch day {
+  case "sunday":
+    doSomething()
+  default:
+    work()
+}
+```
+
+See: [Switch](https://github.com/golang/go/wiki/Switch)
+
+### For loop
+
+```go
+for i := 0; i <= 10; i++ {
+  fmt.Println("i=", count)
+}
+```
+
+See: [For loops](https://tour.golang.org/flowcontrol/1)
+
+### For-Range loop
+
+```go
+entry := []string{"a","b","c"}
+for i, val := range entry {
+  fmt.Printf("i=%d, val=%s\n", i, val)
+}
+```
+
+See: [For-Range loops](https://gobyexample.com/range)
+
+### While loop
+
+```go
+n := 0
+x := 42
+for n != x {
+  n := guess()
+}
+```
+
+See: [Go's "while"](https://tour.golang.org/flowcontrol/3)
+
+## Functions
+{: .-three-column}
+
+### Lambdas
+
+```go
+myfunc := func() bool {
+  return x > 10000
+}
+```
+{: data-line="1"}
+
+Functions are first class objects.
+
+### Multiple return types
+
+```go
+a, b := getMessage()
+```
+
+```go
+func getMessage() (a string, b string) {
+  return "Hello", "World"
+}
+```
+{: data-line="2"}
+
+### Named return values
+
+```go
+func split(sum int) (x, y int) {
+  x = sum * 4 / 9
+  y = sum - x
+  return
+}
+```
+{: data-line="4"}
+
+By defining the return value names in the signature, a `return` (no args) will return variables with those names.
+
+See: [Named return values](https://tour.golang.org/basics/7)
