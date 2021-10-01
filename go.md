@@ -106,6 +106,8 @@ See: [Type conversions](https://tour.golang.org/basics/13)
 
 
 ## Arrays (static)
+{: .-three-column}
+
 ### Define
 
 ```go
@@ -193,6 +195,9 @@ sort.Sort(sort.Reverse(sort.IntSlice(s)))
 ```
 
 ## Flow control
+{: .-three-column}
+
+
 ### Switch
 
 ```go
