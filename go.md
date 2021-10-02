@@ -214,9 +214,8 @@ val, ok := m["route"]
 delete(m, Key)
 ```
 #### Iter: `map.Iter()`
-for key, value := range map {}
 ```go
-
+for key, value := range map {}
 ```
 #### Sort: `a.Sort()`
 ```go
@@ -236,7 +235,7 @@ sort.Sort(sort.Reverse(sort.IntSlice(s)))
 ## Concurrency
 {: .-three-column}
 
-### Goroutines
+### Channels
 #### New: `channel.New()`
 ```go
 // A "channel"
@@ -256,8 +255,7 @@ fmt.Println(<-ch, <-ch)
 ```
 {: data-line="2"}
 
-### Buffered channels
-#### New: `channel.New(size)`
+##### Buffered channel: `channel.New(size)`
 ```go
 ch := make(chan int, 2)
 ```
@@ -333,6 +331,26 @@ See: [Range and close](https://tour.golang.org/concurrency/4)
 A WaitGroup waits for a collection of goroutines to finish. The main goroutine calls Add to set the number of goroutines to wait for. The goroutine calls `wg.Done()` when it finishes.
 See: [WaitGroup](https://golang.org/pkg/sync/#WaitGroup)
 
+### RWMutex
+#### Read Write Mutex
+```go
+var counter = struct{
+    sync.RWMutex
+    val Val
+}{}
+```
+#### Read Lock
+```go
+counter.RLock()
+n := counter.val
+counter.RUnlock() 
+```
+#### Write Lock
+```go
+counter.Lock()
+counter.val = NewVal
+counter.Unlock()
+```
 
 ## Error Handling
 
