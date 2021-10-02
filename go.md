@@ -80,15 +80,50 @@ s := i.(string)
 ```
 {: data-line="2"}
 See: [Type conversions](https://tour.golang.org/basics/13)
-
-<div style="page-break-after: always"></div>
-
 #### Arrays (static)
 ```go
 // var numbers [5]int
 numbers := [...]int{0, 0, 0, 0, 0}
 ```
 
+### Flow control
+{: .-three-column}
+
+#### Switch
+```go
+switch day {
+  case "sunday":
+    doSomething()
+  default:
+    work()
+}
+```
+See: [Switch](https://github.com/golang/go/wiki/Switch)
+#### For loop
+```go
+for i := 0; i <= 10; i++ {
+  fmt.Println("i=", count)
+}
+```
+See: [For loops](https://tour.golang.org/flowcontrol/1)
+#### For-Range loop
+```go
+entry := []string{"a","b","c"}
+for i, val := range entry {
+  fmt.Printf("i=%d, val=%s\n", i, val)
+}
+```
+See: [For-Range loops](https://gobyexample.com/range)
+#### While loop
+```go
+n := 0
+x := 42
+for n != x {
+  n := guess()
+}
+```
+See: [Go's "while"](https://tour.golang.org/flowcontrol/3)
+<div style="page-break-after: always"></div>
 ## Collections
 {: .-three-column}
 ### Slice
@@ -397,44 +432,6 @@ func (s Struct) InterfaceMethod() float64 {
   return 1.0
 }
 ```
-
-### Flow control
-{: .-three-column}
-
-#### Switch
-```go
-switch day {
-  case "sunday":
-    doSomething()
-  default:
-    work()
-}
-```
-See: [Switch](https://github.com/golang/go/wiki/Switch)
-#### For loop
-```go
-for i := 0; i <= 10; i++ {
-  fmt.Println("i=", count)
-}
-```
-See: [For loops](https://tour.golang.org/flowcontrol/1)
-#### For-Range loop
-```go
-entry := []string{"a","b","c"}
-for i, val := range entry {
-  fmt.Printf("i=%d, val=%s\n", i, val)
-}
-```
-See: [For-Range loops](https://gobyexample.com/range)
-#### While loop
-```go
-n := 0
-x := 42
-for n != x {
-  n := guess()
-}
-```
-See: [Go's "while"](https://tour.golang.org/flowcontrol/3)
 
 ## Functions
 {: .-three-column}
