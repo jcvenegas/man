@@ -255,7 +255,7 @@ fmt.Println(<-ch, <-ch)
 ```
 {: data-line="2"}
 
-##### Buffered channel: `channel.New(size)`
+#### Buffered channel: `channel.New(size)`
 ```go
 ch := make(chan int, 2)
 ```
@@ -270,11 +270,7 @@ ch <- 3
 // all goroutines are asleep - deadlock!
 ```
 Write more than size is a runtime error.
-
-
-
-### read from multiple channels
-
+#### read from multiple channels
 ```go
 select {
 case msg1 := <-c1:
@@ -283,30 +279,17 @@ case msg2 := <-c2:
 	fmt.Println("received", msg2)
 }
 ```
-
-### Closing channels
-
-#### Closes a channel
-
+#### Closing channels: `channel.Close()`
 ```go
-ch <- 1
-ch <- 2
-ch <- 3
 close(ch)
 ```
-{: data-line="4"}
-
-#### Iterates across a channel until its closed
-
+#### Iter until Close
 ```go
 for i := range ch {
   ···
 }
 ```
-{: data-line="1"}
-
-#### Closed if `ok == false`
-
+#### Check closed: `channel.IsClosed()`
 ```go
 v, ok := <- ch
 ```
