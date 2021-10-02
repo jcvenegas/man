@@ -11,93 +11,63 @@ updated: 2020-06-21
 ## Getting started
 {: .-three-column}
 
-### Hello world
+### Basics
 {: .-prime}
 
 #### hello.go
 {: .-file}
-
 ```go
 package main
 import "fmt"
-
 func main() {
   fmt.Println("hello")
 }
 ```
 Every package file has to start with `package`.
 
-
-
-### Variables
-
 #### Variable declaration
-
 ```go
 var msg string
 msg = "Hello"
 ```
-
 #### Shortcut of above (Infers type)
 
 ```go
 msg := "Hello"
 ```
 
-### Constants
-
+#### Constants
 ```go
 const Phi = 1.618
 ```
-
-## Basic types
-{: .-three-column}
-
-### Strings
-
+#### Strings
 ```go
 str := "Hello" //type: string
 ```
-
 ```go
 str := `Multiline
 string`
 ```
-
-### Numbers
-
-#### Typical types
-
 ```go
 num := 3          // int
 num := 3.         // float64
 num := 3 + 4i     // complex128
 num := byte('a')  // byte (alias for uint8)
 ```
-
-### Pointers
-```go
-i, j := 42, 2701
-```
+#### Pointers
 ```go
 p := &i  // point to i
 ```
-{: data-line="1"}
 ```go
-fmt.Println(*p) // read i with p
+val := *p //read value that p points
 ```
-{: data-line="1"}
 ```go
-*p = 21 // set i with p
+*p = 21 // modify value whre p points
 ```
-{: data-line="1"}
 ```go
 *p = *p / 37 // divide i with p
 ```
-{: data-line="1"}
-
-### Type conversions
-
+#### Type conversions
 ```go
 i := 2
 f := float64(i)
@@ -109,12 +79,11 @@ var i interface{} = "hello"
 s := i.(string)
 ```
 {: data-line="2"}
-
 See: [Type conversions](https://tour.golang.org/basics/13)
 
 <div style="page-break-after: always"></div>
 
-## Arrays (static)
+### Arrays (static)
 {: .-three-column}
 
 ### Define
