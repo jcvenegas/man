@@ -124,14 +124,13 @@ See: [Type conversions](https://tour.golang.org/basics/13)
 numbers := [...]int{0, 0, 0, 0, 0}
 ```
 
-## Slices (dynamic arrays)
+## Collections
 {: .-three-column}
-
+### Slice
 #### New `slice.new()`
 ```go
 slice := []int{2, 3, 4}
 ```
-
 #### Insert: `a.Insert(x, at(i))`
 ```go
 a = append(a[:i], append([]T{x}, a[i:]...)...)
@@ -187,6 +186,46 @@ a[low:] // from low until end
 import  "sort"
 sort.Strings(strs)
 sort.Ints(ints)
+```
+#### Reverse: `s.Sort().Reverse()`
+```go
+sort.Sort(sort.Reverse(sort.IntSlice(s)))
+```
+### HashMap
+#### New `map.New()`
+```go
+m := make(map[string]int)
+```
+Nil map
+```go
+var m map[KeyType]ValueType
+```
+
+#### Set: `map.Set(key, val)`
+```go
+m[Key] = Val
+```
+#### Get : `map.Get()`
+```go
+val, ok := m["route"]
+```
+####  Delete: `map.Delete(Key)`
+```go
+delete(m, Key)
+```
+#### Iter: `map.Iter()`
+for key, value := range map {}
+```go
+
+```
+#### Sort: `a.Sort()`
+```go
+import "sort"
+for k := range m {
+    keys = append(keys, k)
+}
+sort.Ints(keys)
+for _, k := range keys {}
 ```
 #### Reverse: `s.Sort().Reverse()`
 ```go
