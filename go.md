@@ -398,11 +398,10 @@ func (s Struct) InterfaceMethod() float64 {
 }
 ```
 
-## Flow control
+### Flow control
 {: .-three-column}
 
-### Switch
-
+#### Switch
 ```go
 switch day {
   case "sunday":
@@ -411,32 +410,23 @@ switch day {
     work()
 }
 ```
-
 See: [Switch](https://github.com/golang/go/wiki/Switch)
-
-### For loop
-
+#### For loop
 ```go
 for i := 0; i <= 10; i++ {
   fmt.Println("i=", count)
 }
 ```
-
 See: [For loops](https://tour.golang.org/flowcontrol/1)
-
-### For-Range loop
-
+#### For-Range loop
 ```go
 entry := []string{"a","b","c"}
 for i, val := range entry {
   fmt.Printf("i=%d, val=%s\n", i, val)
 }
 ```
-
 See: [For-Range loops](https://gobyexample.com/range)
-
-### While loop
-
+#### While loop
 ```go
 n := 0
 x := 42
@@ -444,7 +434,6 @@ for n != x {
   n := guess()
 }
 ```
-
 See: [Go's "while"](https://tour.golang.org/flowcontrol/3)
 
 ## Functions
