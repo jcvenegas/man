@@ -25,13 +25,13 @@ func main() {
 ```
 Every package file has to start with `package`.
 
-#### Variable declaration
+### Types
+#### Variables
 ```go
 var msg string
 msg = "Hello"
 ```
 #### Shortcut of above (Infers type)
-
 ```go
 msg := "Hello"
 ```
@@ -83,11 +83,7 @@ See: [Type conversions](https://tour.golang.org/basics/13)
 
 <div style="page-break-after: always"></div>
 
-### Arrays (static)
-{: .-three-column}
-
-### Define
-
+#### Arrays (static)
 ```go
 // var numbers [5]int
 numbers := [...]int{0, 0, 0, 0, 0}
