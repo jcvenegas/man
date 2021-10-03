@@ -121,7 +121,7 @@ See: [Type conversions](https://tour.golang.org/basics/13)
 numbers := [...]int{0, 0, 0, 0, 0}
 ```
 
-### Structs and Methods
+### Structs
 {: .-three-column}
 
 #### Struct
@@ -132,29 +132,7 @@ type StructName struct {
 }
 ```
 {: data-line="1,2,3,4"}
-
-```go
- v := StructName{1, 2}
-```
 See: [Structs](https://tour.golang.org/moretypes/2)
-#### Pointers to structs
-```go
-v := &StructName{xVal, yVal}
-v.X = 2
-```
-`v.X` == `(*v).X`, when `v`
-#### Method Receivers
-```go
-func (t T) MethodName() {}
-```
-{: data-line="1"}
-
-#### Method Mutation
-```go
-func (t *T) Setter(val ValType) {}
-```
-{: data-line="1"}
-See: [Pointer receivers](https://tour.golang.org/methods/4)
 
 ### Interfaces
 #### Interface definition
@@ -165,7 +143,7 @@ type Inteface interface {
 ```
 #### Implement Interface
 ```go
-func (s Struct) InterfaceMethod() ReturnType {
+func (s StructName) InterfaceMethod() ReturnType {
   return Type
 }
 ```
