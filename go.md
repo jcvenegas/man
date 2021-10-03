@@ -127,12 +127,12 @@ type StructName struct {
 #### Interface definition
 ```go
 type Inteface interface {
-  InterfaceMethod() ReturnType
+  IfaceMethod() ReturnType
 }
 ```
 #### Implement Interface
 ```go
-func (s StructName) InterfaceMethod() ReturnType {
+func (s Struct) IfaceMethod() ReturnType {
   return Type
 }
 ```
@@ -230,6 +230,47 @@ a = append([]T{x}, a...)
 #### Pop Front/Shift: `a.PopFront()`
 ```go
 x, a = a[0], a[1:]
+```
+
+### Heap
+#### Interface implementation
+```go
+import "container/heap"
+
+type T int
+type Heap []T
+
+func (h Heap) Len() int{
+	return len(h)
+}
+func (h Heap) Less(i, j int) bool {
+	return h[i] < h[j]
+}
+func (h Heap) Swap(i, j int) {
+	h[i], h[j] = h[j], h[i]
+}
+func (h *Heap) Push(x interface{}) {
+	*h = append(*h, x.(T))
+}
+func (h *Heap) Pop() interface{} {
+	old := *h
+	n := len(old)
+	x := old[n-1]
+	*h = old[0:n-1]
+	return x
+}
+```
+#### heap.New()
+```go
+h := &Heap{}
+```
+#### heap.Push()
+```go
+heap.Push(h, T(1)) // O(log n)
+```
+#### heap.Pop()
+```
+val := heap.Pop(h).(T)
 ```
 
 ### HashMap
