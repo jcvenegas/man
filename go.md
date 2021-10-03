@@ -228,22 +228,6 @@ a = append(a[:i], a[i+1:]...)
 ```go
 a = append(a[:i], append(b, a[i:]...)...)
 ```
-#### Push: `a.Push(x)`
-```go
-a = append(a, x)
-```
-#### Pop: `a.Pop()`
-```go
-x, a = a[len(a)-1], a[:len(a)-1]
-```
-#### Push front: `a.PushFront(x)`
-```go
-a = append([]T{x}, a...)
-```
-#### Pop Front/Shift: `a.PopFront()`
-```go
-x, a = a[0], a[1:]
-```
 #### Sub slice: `a[i..j]`
 ```go
 // high: non inclusive
@@ -263,6 +247,24 @@ sort.Ints(ints)
 ```go
 sort.Sort(sort.Reverse(sort.IntSlice(s)))
 ```
+### Slice as Queue
+#### Push: `a.Push(x)`
+```go
+a = append(a, x)
+```
+#### Pop: `a.Pop()`
+```go
+x, a = a[len(a)-1], a[:len(a)-1]
+```
+#### Push front: `a.PushFront(x)`
+```go
+a = append([]T{x}, a...)
+```
+#### Pop Front/Shift: `a.PopFront()`
+```go
+x, a = a[0], a[1:]
+```
+
 ### HashMap
 #### New `map.New()`
 ```go
