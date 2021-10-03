@@ -171,12 +171,12 @@ func (s Struct) InterfaceMethod() ReturnType {
 ```
 
 ### Functions
-### Lambdas
+#### Lambdas
 ```go
 myfunc := func() ReturnType {}
 ```
 {: data-line="1"}
-### Multiple return types
+#### Multiple return types
 ```go
 a, b := FunctionName()
 ```
@@ -186,7 +186,7 @@ func FunctionName() (a string, b string) {
 }
 ```
 {: data-line="2"}
-### Named return values
+#### Named return values
 ```go
 func split(sum int) (x, y int) {
   return
