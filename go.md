@@ -122,7 +122,96 @@ See: [Type conversions](https://tour.golang.org/basics/13)
 numbers := [...]int{0, 0, 0, 0, 0}
 ```
 
+### Structs,  Function and Interface
+{: .-three-column}
 
+#### Struct
+```go
+type StructName struct {
+  X  T
+  X T
+}
+```
+{: data-line="1,2,3,4"}
+
+```go
+ v := StructName{1, 2}
+```
+See: [Structs](https://tour.golang.org/moretypes/2)
+#### Pointers to structs
+```go
+v := &StructName{xVal, yVal}
+v.X = 2
+```
+`v.X` == `(*v).X`, when `v`
+#### Method Receivers
+```go
+func (t T) MethodName() {}
+```
+{: data-line="1"}
+
+#### Method Mutation
+```go
+func (t *T) Setter(val ValType) {}
+```
+{: data-line="1"}
+See: [Pointer receivers](https://tour.golang.org/methods/4)
+
+### Interfaces
+#### Interface definition
+```go
+type Inteface interface {
+  InterfaceMethod() ReturnType
+}
+```
+#### Implement Interface
+```go
+func (s Struct) InterfaceMethod() ReturnType {
+  return Type
+}
+```
+
+## Functions
+{: .-three-column}
+
+### Lambdas
+
+```go
+myfunc := func() bool {
+  return x > 10000
+}
+```
+{: data-line="1"}
+
+Functions are first class objects.
+
+### Multiple return types
+
+```go
+a, b := getMessage()
+```
+
+```go
+func getMessage() (a string, b string) {
+  return "Hello", "World"
+}
+```
+{: data-line="2"}
+
+### Named return values
+
+```go
+func split(sum int) (x, y int) {
+  x = sum * 4 / 9
+  y = sum - x
+  return
+}
+```
+{: data-line="4"}
+
+By defining the return value names in the signature, a `return` (no args) will return variables with those names.
+
+See: [Named return values](https://tour.golang.org/basics/7)
 <div style="page-break-after: always"></div>
 
 ## Collections
@@ -351,127 +440,3 @@ func function() (err error) {
 }
 ```
 
-## Structs
-{: .-three-column}
-
-### Defining
-
-```go
-type Vertex struct {
-  X int
-  Y int
-}
-```
-{: data-line="1,2,3,4"}
-
-```go
- v := Vertex{1, 2}
-```
-
-See: [Structs](https://tour.golang.org/moretypes/2)
-
-
-### Pointers to structs
-
-```go
-v := &Vertex{1, 2}
-v.X = 2
-```
-
-Doing `v.X` is the same as doing `(*v).X`, when `v` is a pointer.
-
-## Methods
-
-### Receivers
-```go
-func (v Vertex) Abs() float64 {
-  return math.Sqrt(v.X * v.X + v.Y * v.Y)
-}
-```
-{: data-line="1"}
-
-```go
-v := Vertex{1, 2}
-v.Abs()
-```
-
-### Mutation
-
-```go
-func (v *Vertex) Scale(f float64) {
-  v.X = v.X * f
-  v.Y = v.Y * f
-}
-```
-{: data-line="1"}
-
-```go
-v := Vertex{6, 12}
-v.Scale(0.5)
-// `v` is updated
-```
-
-By defining your receiver as a pointer (`*Vertex`), you can do mutations.
-
-See: [Pointer receivers](https://tour.golang.org/methods/4)
-
-## Interfaces
-
-### A basic interface
-```go
-type Inteface interface {
-  InterfaceMethod() float64
-}
-```
-#### Struct
-```go
-type Struct struct {}
-```
-#### Methods
-```go
-func (s Struct) InterfaceMethod() float64 {
-  return 1.0
-}
-```
-
-## Functions
-{: .-three-column}
-
-### Lambdas
-
-```go
-myfunc := func() bool {
-  return x > 10000
-}
-```
-{: data-line="1"}
-
-Functions are first class objects.
-
-### Multiple return types
-
-```go
-a, b := getMessage()
-```
-
-```go
-func getMessage() (a string, b string) {
-  return "Hello", "World"
-}
-```
-{: data-line="2"}
-
-### Named return values
-
-```go
-func split(sum int) (x, y int) {
-  x = sum * 4 / 9
-  y = sum - x
-  return
-}
-```
-{: data-line="4"}
-
-By defining the return value names in the signature, a `return` (no args) will return variables with those names.
-
-See: [Named return values](https://tour.golang.org/basics/7)
