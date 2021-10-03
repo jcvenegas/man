@@ -170,47 +170,30 @@ func (s Struct) InterfaceMethod() ReturnType {
 }
 ```
 
-## Functions
-{: .-three-column}
-
+### Functions
 ### Lambdas
-
 ```go
-myfunc := func() bool {
-  return x > 10000
-}
+myfunc := func() ReturnType {}
 ```
 {: data-line="1"}
-
-Functions are first class objects.
-
 ### Multiple return types
-
 ```go
-a, b := getMessage()
+a, b := FunctionName()
 ```
-
 ```go
-func getMessage() (a string, b string) {
-  return "Hello", "World"
+func FunctionName() (a string, b string) {
+  return a, b
 }
 ```
 {: data-line="2"}
-
 ### Named return values
-
 ```go
 func split(sum int) (x, y int) {
-  x = sum * 4 / 9
-  y = sum - x
   return
 }
 ```
 {: data-line="4"}
 
-By defining the return value names in the signature, a `return` (no args) will return variables with those names.
-
-See: [Named return values](https://tour.golang.org/basics/7)
 <div style="page-break-after: always"></div>
 
 ## Collections
