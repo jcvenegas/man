@@ -34,26 +34,22 @@ switch day {
     work()
 }
 ```
-See: [Switch](https://github.com/golang/go/wiki/Switch)
 #### For loop
 ```go
 for i := 0; i <= 10; i++ {
   fmt.Println("i=", count)
 }
 ```
-See: [For loops](https://tour.golang.org/flowcontrol/1)
 #### For-Range loop
 ```go
 for i, val := range Slice {
   fmt.Printf("i=%d, val=%s\n", i, val)
 }
 ```
-See: [For-Range loops](https://gobyexample.com/range)
 #### While loop
 ```go
 for true { }
 ```
-See: [Go's "while"](https://tour.golang.org/flowcontrol/3)
 
 ### Types
 #### Variables
@@ -109,7 +105,6 @@ var i interface{} = "hello"
 s, ok := i.(string) // string, bool
 ```
 {: data-line="2"}
-See: [Type conversions](https://tour.golang.org/basics/13)
 #### Arrays (static)
 ```go
 // var numbers [5]int
@@ -127,7 +122,6 @@ type StructName struct {
 }
 ```
 {: data-line="1,2,3,4"}
-See: [Structs](https://tour.golang.org/moretypes/2)
 
 ### Interfaces
 #### Interface definition
@@ -341,8 +335,6 @@ for i := range ch {
 v, ok := <- ch
 ```
 
-See: [Range and close](https://tour.golang.org/concurrency/4)
-
 ### WaitGroup
 
 ```go
@@ -359,7 +351,6 @@ See: [Range and close](https://tour.golang.org/concurrency/4)
 ```
 
 A WaitGroup waits for a collection of goroutines to finish. The main goroutine calls Add to set the number of goroutines to wait for. The goroutine calls `wg.Done()` when it finishes.
-See: [WaitGroup](https://golang.org/pkg/sync/#WaitGroup)
 
 ### RWMutex
 #### Read Write Mutex
