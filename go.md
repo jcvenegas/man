@@ -24,8 +24,7 @@ func main() {
 }
 ```
 Every package file has to start with `package`.
-{: .-three-column}
-
+### Control Flow
 #### Switch
 ```go
 switch day {
