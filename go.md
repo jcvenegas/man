@@ -106,7 +106,7 @@ u := uint(i)
 #### type assertion
 ```
 var i interface{} = "hello"
-s := i.(string)
+s, ok := i.(string) // string, bool
 ```
 {: data-line="2"}
 See: [Type conversions](https://tour.golang.org/basics/13)
