@@ -415,10 +415,13 @@ counter.Unlock()
 func function() (err error) {
   defer func(){
     if err != nil {
-      err = fmt.Errof("Add Context(%s)",err)
+      err = fmt.Errorf("Add Context(%s)",err)
     }
   }()
   //...
+  return fmt.Errorf("Error")
+  // or
+  return nil
 }
 ```
 
