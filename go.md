@@ -121,7 +121,7 @@ See: [Type conversions](https://tour.golang.org/basics/13)
 numbers := [...]int{0, 0, 0, 0, 0}
 ```
 
-### Structs,  Function and Interface
+### Structs and Methods
 {: .-three-column}
 
 #### Struct
