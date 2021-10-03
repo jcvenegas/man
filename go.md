@@ -44,19 +44,14 @@ for i := 0; i <= 10; i++ {
 See: [For loops](https://tour.golang.org/flowcontrol/1)
 #### For-Range loop
 ```go
-entry := []string{"a","b","c"}
-for i, val := range entry {
+for i, val := range Slice {
   fmt.Printf("i=%d, val=%s\n", i, val)
 }
 ```
 See: [For-Range loops](https://gobyexample.com/range)
 #### While loop
 ```go
-n := 0
-x := 42
-for n != x {
-  n := guess()
-}
+for true { }
 ```
 See: [Go's "while"](https://tour.golang.org/flowcontrol/3)
 
