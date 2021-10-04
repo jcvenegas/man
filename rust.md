@@ -47,7 +47,7 @@ let m = vec![vec![init_val;cols]; rows];
 ```rust
 use std::collections::VecDeque;
 ```
-### New
+#### New
 ```rust
 let mut q = VecDeque::new();
 ```
