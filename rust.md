@@ -82,6 +82,15 @@ map.contains_key(key); // bool
 ```rust
 map.remove(key);
 ```
+#### Iter
+```rust
+for (k, v) in map.Iter() {}
+```
+```rust
+for (_, val) in map.iter_mut() {
+        *val= Val;
+}
+```
 
 ### Heap
 ```rust
@@ -112,5 +121,11 @@ heap.peek() // Option<Val>
 ```
 ```rust
 map.is_empty()
+```
+#### Reverse
+```rust
+use std::cmp::Reverse;
+heap.push(Reverse(T));
+heap.pop(); Option<Reverse(T)>
 ```
 
