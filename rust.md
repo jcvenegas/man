@@ -39,7 +39,39 @@ let _ = f.read_line(&mut s)?;
 ```rust
 let m = vec![vec![init_val;cols]; rows];
 ```
-
+### Iterators
+#### Iter
+```rust
+chain()
+```
+```rust
+filter()
+```
+```rust
+for_each()
+```
+```rust
+map()
+```
+```rust
+max()
+```
+```rust
+max_by()
+```
+```rust
+min()
+```
+```rust
+reduce()
+```
+```rust
+zip()
+```
+#### IntoIter
+```rust
+into_iter()
+```
 
 
 ## Collections
