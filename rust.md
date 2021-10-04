@@ -47,16 +47,20 @@ let m = vec![vec![init_val;cols]; rows];
 ```rust
 use std::collections::VecDeque;
 ```
+### New
 ```rust
-let mut buf = VecDeque::new();
+let mut q = VecDeque::new();
+```
+#### Operations
+```rust
+q.push_back(Val);
 ```
 ```rust
-buf.push_back(Val);
-assert_eq!(buf.pop_back(), Some(Val));
+q.pop_back(); // Option<T>: Some(Val)
 ```
 #### Get by index
 ```rust
-assert_eq!(buf.get(1), Some(&4));
+q.get(1);  // Option<T>: Some(&T))
 ````
 
 ### Map
@@ -87,7 +91,7 @@ use std::collections::BinaryHeap;
 ```rust
 let mut heap = BinaryHeap::new();
 ```
-#### Heap Struct compare
+#### New with custom comparator
 ```rust
 use comparator::comparing;
 let mut heap = 
