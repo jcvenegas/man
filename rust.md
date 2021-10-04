@@ -63,10 +63,12 @@ assert_eq!(buf.get(1), Some(&4));
 ```rust
 use std::collections::HashMap;
 ```
+#### New
 ```rust
 let mut map = HashMap::new();
 map.insert(key,val);
 ```
+#### Operations
 ```rust
 map.get(key); // Option<&V>
 ```
