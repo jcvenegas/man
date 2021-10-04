@@ -81,8 +81,16 @@ map.remove(key);
 ```rust
 use std::collections::BinaryHeap;
 ```
-```
+#### New
+```rust
 let mut heap = BinaryHeap::new();
+```
+```rust
+use comparator::comparing;
+let mut heap = 
+  BinaryHeap::with_comparator(
+    comparing(|s: &StructName| s.attr)
+  );
 ```
 ```rust
 heap.push(T);
