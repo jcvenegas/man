@@ -85,6 +85,7 @@ use std::collections::BinaryHeap;
 ```rust
 let mut heap = BinaryHeap::new();
 ```
+#### Heap Struct compare
 ```rust
 use comparator::comparing;
 let mut heap = 
@@ -92,14 +93,15 @@ let mut heap =
     comparing(|s: &StructName| s.attr)
   );
 ```
+#### Operations
 ```rust
 heap.push(T);
 ```
 ```rust
 heap.pop() // Option<T>
 ```
-#### Get Val but not Pop
 ```rust
+//get val but not pop
 heap.peek() // Option<Val>
 ```
 ```rust
