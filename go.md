@@ -23,6 +23,14 @@ func main() {
   fmt.Println("hello")
 }
 ```
+#### Scanf
+```go
+fmt.Scanf("%s", &name)
+```
+#### cli args
+```go
+os.Args[index]//slice of args
+```
 Every package file has to start with `package`.
 ### Control Flow
 #### Switch
