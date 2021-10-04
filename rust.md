@@ -76,3 +76,25 @@ map.contains_key(key); // bool
 ```rust
 map.remove(key);
 ```
+
+### Heap
+```rust
+use std::collections::BinaryHeap;
+```
+```
+let mut heap = BinaryHeap::new();
+```
+```rust
+heap.push(T);
+```
+```rust
+heap.pop() // Option<T>
+```
+#### Get Val but not Pop
+```rust
+heap.peek() // Option<Val>
+```
+```rust
+map.is_empty()
+```
+
