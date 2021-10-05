@@ -58,9 +58,9 @@ a..=b
 ### References & Pointers
 #### Shared reference
 ```rust
-&S // Shared reference
-  &[S] // Special slice
-  &str	// Special string slice reference
+&S       // Shared reference
+  &[S]   // Special slice
+  &str	  // Special str slice ref
   &dyn T	// Special trait object 
 ```
 ### Types
