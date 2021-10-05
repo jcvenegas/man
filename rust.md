@@ -18,21 +18,31 @@ updated: 2020-06-21
 ```rust
 fn main() {}
 ```
+#### Struct
+```rust
+ struct S { x: T, y: T }
+```
+#### Enum
+```rust
+ enum E { A, B(), C {} }
+```
+#### Global variable
+```rust
+static X: T = T();
+```
+#### Constant
+```rust
+const X: T = T();
+```
+#### Array
+```rust
+[x; n]
+```
 #### Read from stdin
 ```rust
 let mut buffer = String::new();
 std::io::stdin().read_line(&mut buffer)?;
 std::io::stdin().read_to_string(&mut buffer)?;
-```
-#### Fake stdin
-```rust
-use std::io::{Cursor,BufRead};
-
-// let mut stdin = io::stdin();
-let mut stdin = Cursor::new("FAKE TEXT".to_string());
-
-let mut s = String::new();
-let _ = f.read_line(&mut s)?;
 ```
 ### Types
 #### Matrtix
@@ -159,5 +169,17 @@ map.is_empty()
 use std::cmp::Reverse;
 heap.push(Reverse(T));
 heap.pop(); Option<Reverse(T)>
+```
+
+## Others
+### Fake stdin
+```rust
+use std::io::{Cursor,BufRead};
+
+// let mut stdin = io::stdin();
+let mut stdin = Cursor::new("FAKE TEXT".to_string());
+
+let mut s = String::new();
+let _ = f.read_line(&mut s)?;
 ```
 
