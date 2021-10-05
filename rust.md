@@ -18,6 +18,8 @@ updated: 2020-06-21
 ```rust
 fn main() {}
 ```
+
+### Data Structures
 #### Struct
 ```rust
  struct S { x: T, y: T }
@@ -30,7 +32,7 @@ fn main() {}
 ```rust
 static X: T = T();
 ```
-#### Constant
+#### Const
 ```rust
 const X: T = T();
 ```
@@ -52,11 +54,14 @@ a..=b
 ```rust
 ..
 ```
-#### Read from stdin
+
+### References & Pointers
+#### Shared reference
 ```rust
-let mut buffer = String::new();
-std::io::stdin().read_line(&mut buffer)?;
-std::io::stdin().read_to_string(&mut buffer)?;
+&S // Shared reference
+  &[S] // Special slice
+  &str	// Special string slice reference
+  &dyn T	// Special trait object 
 ```
 ### Types
 #### Matrtix
@@ -185,7 +190,7 @@ heap.push(Reverse(T));
 heap.pop(); Option<Reverse(T)>
 ```
 
-## Others
+## Input
 ### Fake stdin
 ```rust
 use std::io::{Cursor,BufRead};
@@ -196,4 +201,11 @@ let mut stdin = Cursor::new("FAKE TEXT".to_string());
 let mut s = String::new();
 let _ = f.read_line(&mut s)?;
 ```
+### Read from stdin
+```rust
+let mut buffer = String::new();
+std::io::stdin().read_line(&mut buffer)?;
+std::io::stdin().read_to_string(&mut buffer)?;
+```
+
 
