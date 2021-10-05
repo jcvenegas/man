@@ -36,7 +36,21 @@ const X: T = T();
 ```
 #### Array
 ```rust
-[x; n]
+let array = [x1, x2, ..., xn]
+let array = [x; Size]
+let array = [T; Size]
+```
+#### Right-exclusive range
+```rust
+a..b
+```
+#### Right-exclusive range
+```rust
+a..=b
+```
+#### Full range
+```rust
+..
 ```
 #### Read from stdin
 ```rust
