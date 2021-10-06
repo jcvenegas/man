@@ -105,13 +105,18 @@ let m = vec![vec![init_val;cols]; rows];
 ```rust
 .max()
 .min()
-.max_by(|x| bool_exp_with_x) // Iter: max using closure
+// max using closure
+.max_by(|x| bool_exp_with_x) // Iter: 
 ```
 ```rust
-.zip(OtherIter) // Iter: [(x1, y1),...,(xn,yn)] 
+// Using two Iter x and y:
+// return: iter:
+[(x1, y1),...,(xn,yn)] 
+.zip(OtherIter) // Iter: 
 ```
 #### IntoIter
 ```rust
+https://hermanradtke.com/2015/06/22/effectively-using-iterators-in-rust.html
 into_iter()
 ```
 
