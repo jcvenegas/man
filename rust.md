@@ -69,29 +69,38 @@ a..=b
 let m = vec![vec![init_val;cols]; rows];
 ```
 ### Iterators
-#### Iter
+#### All: true if all eval true
 ```rust
-true if all eval true
 .all(|x| eval_x) // -> bool
-true if any eval true
+```
+#### Any: true if any eval true
+```rust
 .any(|x| eval_x) // -> bool
 ```
 ```rust
 .enumerate() // -> (i, val)
 ```
+#### Chain:  Merge 2 iterators
 ```rust
-.chain(otherIter) // -> Iter: Merge 2 iterators                      
+.chain(otherIter) // -> Iter     
 ```
+#### Filter: elements eval true
 ```rust
- .filter(|x| eval_x) // iter w/elements: eval_x==true
+ .filter(|x| eval_x)
 ```
+#### Reduce: reduce to one value
 ```rust
-// Reduce
-.fold(Init, |Acc, x| acc + x) // -> Acc: accumulate using x
-                               // Init is the intial value of acc
+//Init: init val for acc
+//Acc: accumulate value over calls
+//exp: used modify acc using x
+// e.g. `acc += x`
+.fold(Init, |Acc, x| exp)
 ```
+#### map: New iter with elements eval true
 ```rust
-.map(|x| return op_with_x) // -> Iter: with items eval: op_with_x
+// exp_with_x: expression with x
+//  it is value of element in new iter
+.map(|x| exp ) // -> Iter
 ```
 ```rust
 .max()
