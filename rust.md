@@ -71,31 +71,35 @@ let m = vec![vec![init_val;cols]; rows];
 ### Iterators
 #### Iter
 ```rust
-chain()
+true if all eval true
+.all(|x| eval_x) // -> bool
+true if any eval true
+.any(|x| eval_x) // -> bool
 ```
 ```rust
-filter()
+.enumerate() // -> (i, val)
 ```
 ```rust
-for_each()
+.chain(otherIter) // -> Iter: Merge 2 iterators                      
 ```
 ```rust
-map()
+ .filter(|x| eval_x) // iter w/elements: eval_x==true
 ```
 ```rust
-max()
+// Reduce
+.fold(Init, |Acc, x| acc + x) // -> Acc: accumulate using x
+                               // Init is the intial value of acc
 ```
 ```rust
-max_by()
+.map(|x| return op_with_x) // -> Iter: with items eval: op_with_x
 ```
 ```rust
-min()
+.max()
+.min()
+.max_by(|x| bool_exp_with_x) // Iter: max using closure
 ```
 ```rust
-reduce()
-```
-```rust
-zip()
+.zip(OtherIter) // Iter: [(x1, y1),...,(xn,yn)] 
 ```
 #### IntoIter
 ```rust
