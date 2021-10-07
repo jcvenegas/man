@@ -28,6 +28,12 @@ Parse values
 string.parse::<T>()
 ```
 
+### Into
+
+### Option
+
+### Result
+
 ### Data Structures
 #### Struct
 ```rust
