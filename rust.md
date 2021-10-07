@@ -20,7 +20,7 @@ fn main() -> Result<(),String>{}
 ```
 cli args
 ```rust
-arg = std::env::args().nth(x)
+arg = std::env::args().nth(x);
 args = Vec<String> = std::env::args().collect();
 ```
 Parse values
@@ -33,6 +33,7 @@ string.parse::<T>()
 ### Option
 
 ### Result
+https://nick.groenen.me/posts/rust-error-handling/
 
 ### Data Structures
 #### Struct
@@ -53,9 +54,9 @@ const X: T = T();
 ```
 #### Array
 ```rust
-let array = [x1, x2, ..., xn]
-let array = [x; Size]
-let array = [T; Size]
+let array = [x1, x2, ..., xn];
+let array = [x; Size];
+let array = [T; Size];
 ```
 #### Right-exclusive range
 ```rust
