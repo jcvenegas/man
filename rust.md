@@ -18,6 +18,15 @@ updated: 2020-06-21
 ```rust
 fn main() -> Result<(),String>{}
 ```
+cli args
+```rust
+arg = std::env::args().nth(x)
+args = Vec<String> = std::env::args().collect();
+```
+Parse values
+```
+string.parse::<T>()
+```
 
 ### Data Structures
 #### Struct
@@ -223,4 +232,9 @@ std::io::stdin().read_to_string(&mut buffekr)?;
 ```rust
 fn f(x: &dyn T)
 ```
-
+### Collection of Trait
+```rust
+Vec<&mut dyn T>
+Vec<&dyn T>
+v.push(&implementer);
+```
