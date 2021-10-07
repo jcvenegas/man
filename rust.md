@@ -107,10 +107,7 @@ let m = vec![vec![init_val;cols]; rows];
 .max_by(|x,y| exp) // maxVal: 
 ```
 ```rust
-// Using two Iter x and y:
-// return: iter:
-[(x1, y1),...,(xn,yn)] 
-.zip(x: Iter)//Iter:[(x1, y1),...] 
+ .zip(y:Iter)//Iter:[(self1, y1),...] 
 ```
 #### IntoIter
 ```rust
