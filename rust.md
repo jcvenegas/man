@@ -244,3 +244,4 @@ Vec<&mut dyn T>
 Vec<&dyn T>
 v.push(&implementer);
 ```
+### FromStr
