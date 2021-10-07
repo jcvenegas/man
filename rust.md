@@ -69,50 +69,48 @@ a..=b
 let m = vec![vec![init_val;cols]; rows];
 ```
 ### Iterators
-#### All: true if all eval true
+#### All: true if all exp true
 ```rust
-.all(|x| eval_x) // -> bool
+.all(|x| exp) // -> bool
 ```
-#### Any: true if any eval true
+#### Any: true if any exp true
 ```rust
-.any(|x| eval_x) // -> bool
+.any(|x| exp) // -> bool
 ```
 ```rust
 .enumerate() // -> (i, val)
 ```
 #### Chain:  Merge 2 iterators
 ```rust
-.chain(otherIter) // -> Iter     
+.chain(y:Iter)//->Iter[self...,y...]    
 ```
-#### Filter: elements eval true
+#### Filter: elements where exp true
 ```rust
- .filter(|x| eval_x)
+//for_each(fn(x)==true)
+.filter(|x| exp)//->Iter[x1,...,xn]
 ```
 #### Reduce: reduce to one value
 ```rust
-//Init: init val for acc
-//Acc: accumulate value over calls
-//exp: used modify acc using x
-// e.g. `acc += x`
-.fold(Init, |Acc, x| exp)
+// acc: persistent over time.
+.fold(Init, |Acc, x| exp) -> Acc
 ```
 #### map: New iter with elements eval true
 ```rust
-// exp_with_x: expression with x
-//  it is value of element in new iter
-.map(|x| exp ) // -> Iter
+// where x' == fn(x)
+.map(|x| exp )//->Iter{x'...}
 ```
 ```rust
-.max()
-.min()
+.max() // -> maxVal
+.min() // -> maxVal
 // max using closure
-.max_by(|x| bool_exp_with_x) // Iter: 
+// exp: true
+.max_by(|x,y| exp) // maxVal: 
 ```
 ```rust
 // Using two Iter x and y:
 // return: iter:
 [(x1, y1),...,(xn,yn)] 
-.zip(OtherIter) // Iter: 
+.zip(x: Iter)//Iter:[(x1, y1),...] 
 ```
 #### IntoIter
 ```rust
