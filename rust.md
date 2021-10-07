@@ -16,7 +16,7 @@ updated: 2020-06-21
 
 #### main.rs
 ```rust
-fn main() {}
+fn main() -> Result<(),String>{}
 ```
 
 ### Data Structures
@@ -78,7 +78,7 @@ let m = vec![vec![init_val;cols]; rows];
 .any(|x| exp) // -> bool
 ```
 ```rust
-.enumerate() // -> (i, val)
+.enumerate() // -> [(i, val)...]
 ```
 #### Chain:  Merge 2 iterators
 ```rust
@@ -102,8 +102,7 @@ let m = vec![vec![init_val;cols]; rows];
 ```rust
 .max() // -> maxVal
 .min() // -> maxVal
-// max using closure
-// exp: true
+// exp: bool
 .max_by(|x,y| exp) // maxVal: 
 ```
 ```rust
@@ -218,7 +217,10 @@ let _ = f.read_line(&mut s)?;
 ```rust
 let mut buffer = String::new();
 std::io::stdin().read_line(&mut buffer)?;
-std::io::stdin().read_to_string(&mut buffer)?;
+std::io::stdin().read_to_string(&mut buffekr)?;
 ```
-
+### dyn T
+```rust
+fn f(x: &dyn T)
+```
 
