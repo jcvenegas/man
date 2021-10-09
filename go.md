@@ -422,21 +422,3 @@ counter.val = NewVal
 counter.Unlock()
 ```
 
-## Error Handling
-
-### Defer error check
-
-```go
-func function() (err error) {
-  defer func(){
-    if err != nil {
-      err = fmt.Errorf("Add Context(%s)",err)
-    }
-  }()
-  //...
-  return fmt.Errorf("Error")
-  // or
-  return nil
-}
-```
-
