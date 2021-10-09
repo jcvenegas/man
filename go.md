@@ -98,7 +98,7 @@ val := *p // p.getVal()
 ```go
 *p = *p / 37 // p.setVal(p.getVal()/37)
 ```
-#### Type conversions
+### Type conversions
 ```go
 i := 2
 f := float64(i)
