@@ -168,6 +168,26 @@ func split(sum int) (x, y int) {
 ```
 {: data-line="4"}
 
+### Regex
+```go
+import "regexp"
+```
+```go
+r, _ := regexp.Compile("regex")
+```
+```go
+mList:= r.FindAllString("Txt",-1)
+```
+```go
+mIdx := r.FindAllStringIndex("Txt",-1)
+```
+```go
+sList := r.FindAllStringSubmatch("Txt",-1)
+```
+```go
+sIdx := r.FindAllStringSubmatchIndex("Txt", -1)
+```
+
 <div style="page-break-after: always"></div>
 
 ## Collections
