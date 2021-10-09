@@ -23,6 +23,7 @@ func main() {
   fmt.Println("hello")
 }
 ```
+Every package file has to start with `package`.
 #### Scanf
 ```go
 fmt.Scanf("%s", &name)
@@ -31,7 +32,7 @@ fmt.Scanf("%s", &name)
 ```go
 os.Args[index]//slice of args
 ```
-Every package file has to start with `package`.
+
 ### Control Flow
 #### Switch
 ```go
@@ -44,19 +45,15 @@ switch day {
 ```
 #### For loop
 ```go
-for i := 0; i <= 10; i++ {
-  fmt.Println("i=", count)
-}
+for i := 0; i <= 10; i++ {}
 ```
 #### For-Range loop
 ```go
-for i, val := range Slice {
-  fmt.Printf("i=%d, val=%s\n", i, val)
-}
+for i, val := range Slice {}
 ```
 #### While loop
 ```go
-for true { }
+for true {}
 ```
 
 ### Types
@@ -74,9 +71,9 @@ msg := "Hello"
 ```go
 const Phi = 1.618
 ```
-#### Strings
+#### Types
 ```go
-str := "Hello" //type: string
+str := "Hello"
 ```
 ```go
 str := `Multiline
@@ -86,20 +83,20 @@ string`
 num := 3          // int
 num := 3.         // float64
 num := 3 + 4i     // complex128
-num := byte('a')  // byte (alias for uint8)
+num := byte('a')  // byte (uint8)
 ```
-#### Pointers
+### Pointers
 ```go
 p := &i  // point to i
 ```
 ```go
-val := *p //read value that p points
+val := *p // p.getVal() 
 ```
 ```go
-*p = 21 // modify value whre p points
+*p = 21 // p.setVal()
 ```
 ```go
-*p = *p / 37 // divide i with p
+*p = *p / 37 // p.setVal(p.getVal()/37)
 ```
 #### Type conversions
 ```go
@@ -115,7 +112,9 @@ s, ok := i.(string) // string, bool
 {: data-line="2"}
 #### Arrays (static)
 ```go
-// var numbers [5]int
+var numbers [5]int
+```
+```go
 numbers := [...]int{0, 0, 0, 0, 0}
 ```
 
