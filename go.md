@@ -117,7 +117,10 @@ var numbers [5]int
 ```go
 numbers := [...]int{0, 0, 0, 0, 0}
 ```
-
+### String
+```go
+strings.Split("Str", "sep")
+```
 ### Structs
 {: .-three-column}
 
