@@ -26,7 +26,7 @@ func main() {
 Every package file has to start with `package`.
 #### Scanf
 ```go
-fmt.Scanf("%s", &name)
+n, err := fmt.Scanf("%s", &name)
 ```
 #### cli args
 ```go
